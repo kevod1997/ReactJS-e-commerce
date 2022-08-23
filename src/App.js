@@ -18,6 +18,9 @@ function App() {
     <button onClick={() => {
       setCounter( contador + 1)
     }}>Sumar</button>
+    <button onClick={() => {
+      setCounter( contador -1)
+    }}>Restar</button>
    </div>
     )
   }
