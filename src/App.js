@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable react/react-in-jsx-scope */
 
+import { ThemeProvider } from "@mui/material";
+import { useState } from "react";
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
+import theme from "./MuiTheme"
+
+const saludo = "Sitio Web en construccion" 
 function App() {
+
+  function Contador() {
+    const [contador, setCounter] = useState(1)
+
+    return (
+      <div className="contador">
+    <h1><span>Contador: {contador} </span></h1>
+    <button onClick={() => {
+      setCounter( contador + 1)
+    }}>Sumar</button>
+   </div>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <ThemeProvider theme={theme}>
+   <NavBar/>
+   <ItemListContainer saludo={saludo}/>
+   <Contador/>
+   </ThemeProvider>
   );
 }
 

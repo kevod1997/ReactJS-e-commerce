@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: grey;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.itemContainer{
+  background-color: rgb(65, 43, 7);
+}
+
+.itemContainer h1{
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.contador{
+  background-color: aliceblue;
+  text-align: center;
+  padding: 20px;
+}
+.contador span{
+
+  border-style: solid;
+  border-radius: 10px;
 }
