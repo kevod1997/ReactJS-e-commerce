@@ -33,3 +33,8 @@ code {
   border-style: solid;
   border-radius: 10px;
 }
+.mensaje{
+  background-color: aliceblue;
+  text-align: center;
+  padding: 20px;
+}
