@@ -38,3 +38,21 @@ code {
   text-align: center;
   padding: 20px;
 }
+.texto{
+  background-color: aliceblue;
+  text-align: center;
+  padding: 20px;
+  
+}
+.texto1{
+  display: inline-block;
+  margin: 15px;
+}
+.texto2{
+  background-color: aliceblue;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+}
+

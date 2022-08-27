@@ -7,32 +7,31 @@ function EnableOnInputChange() {
     enableButton(event.target.value);
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Your state values: \n 
-            text: ${text} \n 
-            You can replace this alert with your process`);
+    alert(`El valor de tu estado es: \n 
+            texto: ${text}`);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Enter Text</label>
+    <form className="formulario" onSubmit={handleSubmit}>
+      <div className="texto">
+        <label>Ingresa un texto</label>
         <input
           type="text"
           name="text"
-          placeholder="Enter Text"
+          placeholder="Ingresa un texto"
           onChange={handleTextChange}
           value={text}
         />
       </div>
-      
-      <button type="submit" disabled={!text}>
-        Enable
-      </button>
+      <div className="texto2">
+        <button className="texto1" type="submit" disabled={!text}>
+          Habilitado
+        </button>
+      </div>
     </form>
   );
 }
 
-export default EnableOnInputChange
+export default EnableOnInputChange;
