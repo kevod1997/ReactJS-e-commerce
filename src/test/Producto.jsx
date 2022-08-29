@@ -4,6 +4,11 @@
 // export default function Producto({ item, color, consoleHolaMundo }) {
 //   //console.log('render producto ' + color);
 
+
+// let producto1 = { id: 100, name: 'zapato nike', price: 100 };
+// let producto2 = { id: 101, name: 'zapato adidas', price: 150 };
+// let producto3 = { id: 102, name: 'vestido lola', price: 300 };
+
 //   const [contador, setContador] = useState(0);
 //   const [contador2, setContador2] = useState(0);
 
