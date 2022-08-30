@@ -14,6 +14,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CartWidget";
+import Counter from "./Counter"
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -126,7 +127,8 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-          <CartWidget counter={0} />
+          <CartWidget/>
+          <Counter/>
         </Toolbar>
       </Container>
     </AppBar>
