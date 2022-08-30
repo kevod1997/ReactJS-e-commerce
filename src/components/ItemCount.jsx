@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./Counter";
 
-function ItemCount({ stock, initial }) {
-  const [contador, setContador] = useState(initial);
+function ItemCount({ stock, setContador, contador }) {
   const sumar = () => {
     if (contador < stock) {
       setContador(contador + 1);
@@ -17,13 +16,20 @@ function ItemCount({ stock, initial }) {
     }
   };
   const onAdd = () => {
+    // cont === 0
+    //   ? alert("No compraste caramelos")
+    //   : cont === 1
+    //   ? alert("Compraste " + cont + " caramelo")
+    //   : alert("Compraste " + cont + " caramelos");
+    // Son equivalentes
     if (contador === 0) {
-        alert("No compraste caramelos")
-        return
+      alert("No compraste caramelos");
+      return;
+    } else if (contador === 1) {
+      alert("Compraste " + contador + " caramelo");
+    } else {
+      alert("Compraste " + contador + " caramelos");
     }
-    contador === 1
-      ? alert("Compraste " + contador + " caramelo")
-      : alert("Compraste " + contador + " caramelos");
   };
   return (
     <div className="itemCount">
