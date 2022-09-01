@@ -1,51 +1,24 @@
 /* eslint-disable react/prop-types */
 
 import React from "react";
-import Counter from "./Counter";
 
-function ItemCount({ stock, setContador, contador }) {
-  const sumar = () => {
-    if (contador < stock) {
-      setContador(contador + 1);
-    }
-  };
-
-  const restar = () => {
-    if (contador > 0) {
-      setContador(contador - 1);
-    }
-  };
-  const onAdd = () => {
-    // cont === 0
-    //   ? alert("No compraste caramelos")
-    //   : cont === 1
-    //   ? alert("Compraste " + cont + " caramelo")
-    //   : alert("Compraste " + cont + " caramelos");
-    // Son equivalentes
-    if (contador === 0) {
-      alert("No compraste caramelos");
-      return;
-    } else if (contador === 1) {
-      alert("Compraste " + contador + " caramelo");
-    } else {
-      alert("Compraste " + contador + " caramelos");
-    }
-  };
+function ItemCount({ contador, onAdd, sumar, restar }) {
   return (
-    <div className="itemCount">
-      <div>
-        <button className="btn btn-danger" onClick={restar}>
-          -
-        </button>
-        <Counter contador={contador} />
-        <button className="btn btn-success" onClick={sumar}>
-          +
-        </button>
-      </div>
-      <button className="btn btn-primary m-2" onClick={onAdd}>
-        Comprar
-      </button>
+    <>
+    <p className="card-text d-flex justify-content-center"><span >
+    {contador} </span> </p>
+    <div className="d-flex justify-content-center">
+    <a onClick={restar} style={{ margin: "1px" }} className="btn btn-danger">
+      -
+    </a>
+    <a onClick={onAdd} className="btn btn-primary">
+      Comprar
+    </a>
+    <a onClick={sumar} style={{ margin: "1px" }} className="btn btn-success">
+      +
+    </a>
     </div>
+    </>
   );
 }
 

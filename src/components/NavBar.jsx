@@ -16,12 +16,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CartWidget";
-import Counter from "./Counter"
+
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const NavBar = ({contador}) => {
+const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -130,7 +130,6 @@ const NavBar = ({contador}) => {
             ))}
           </Box>
           <CartWidget/>
-          <Counter contador={contador}/>
         </Toolbar>
       </Container>
     </AppBar>
