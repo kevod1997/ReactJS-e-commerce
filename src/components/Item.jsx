@@ -38,7 +38,7 @@ const [contador, setContador] = useState(1)
 
   return (
     <>
-            <div className="card col-3" style={{ width: "19rem" }}>
+            <div className="card col-3" style={{ width: "19rem", margin: "30px" }}>
               <img src={product.img} className="card-img-top" />
               <div className="card-body">
                 <h1 className="card-title d-flex justify-content-center">{product.nombre}</h1>

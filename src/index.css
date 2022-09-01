@@ -23,16 +23,6 @@ code {
   padding: 10px;
 }
 
-.contador{
-  background-color: aliceblue;
-  text-align: center;
-  padding: 20px;
-}
-.contador span{
-
-  border-style: solid;
-  border-radius: 10px;
-}
 .mensaje{
   background-color: aliceblue;
   text-align: center;
@@ -63,11 +53,12 @@ code {
   justify-content:center;
   flex-direction: column;
 }
-.contador1{
-  background-color: white;
+.contador{
+  background-color: aliceblue;
   color: black;
   border-radius: 30px;
+  
 }
-.contador1:hover{
-  background-color: green;
+.contador:hover{
+  background-color: grey;
 }
