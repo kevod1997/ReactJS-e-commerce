@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import theme from "./MuiTheme";
+import FetchContainer from "./components/FetchContainer";
 
 
 
@@ -14,6 +15,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <NavBar/>
       <ItemListContainer saludo={saludo} />
+      <FetchContainer/>
       {/* 
        <Formularios/>
       <Promesas/>
