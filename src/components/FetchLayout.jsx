@@ -3,7 +3,7 @@ import FetchBtc from "./FetchBtc";
 
 function FetchLayout({ actividad }) {
 
-    Object.entries(actividad).forEach(val => {
+    Object.values(actividad).forEach(val => {
         return <FetchBtc btc={val} key={val.code} />;
     });
 
