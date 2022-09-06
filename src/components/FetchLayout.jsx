@@ -1,16 +1,16 @@
 import React from "react";
 import FetchBtc from "./FetchBtc";
 
-function FetchLayout({ actividad }) {
-
-    Object.values(actividad).forEach(val => {
-        return <FetchBtc btc={val} key={val.code} />;
-    });
-
-
-//     actividad.forEach(element => {
-//         return <FetchBtc btc={element} key={currency} />;
-// });
+function FetchLayout({ actividad, x }) {
+    return (
+        <>
+    {Object.keys(actividad).map((btc) => (
+         <FetchBtc btc={btc} key={x} />
+    ))
+    }
+    </>
+    )
 }
+
 
 export default FetchLayout;

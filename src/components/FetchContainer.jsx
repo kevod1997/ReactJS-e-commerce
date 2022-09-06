@@ -3,7 +3,7 @@ import FetchLayout from './FetchLayout';
 
 function FetchContainer() {
 
-    const [actividad, setActividad] = useState([]);
+    const [actividad, setActividad] = useState({});
     useEffect(()=>{
 
         fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
@@ -13,11 +13,13 @@ function FetchContainer() {
         })
         .catch((e)=>console.log(e))
         .finally(()=> console.log('listo peluca'))
+        
 
     }, []);
+    
   return (
     <>
-    <FetchLayout actividad={actividad} />
+    <FetchLayout actividad={actividad} x={actividad.code} />
     {/* <div>{JSON.stringify(actividad.bpi)}</div> */}
     </>
   )
