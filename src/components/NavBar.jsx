@@ -16,9 +16,10 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CartWidget";
+import { Link as RouterLink, Router } from 'react-router-dom';
 
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Productos", "Blog", "Contacto"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
@@ -49,7 +50,7 @@ const NavBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href=""
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -93,9 +94,11 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
+                <RouterLink key={page} to={`/category/${page}`}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </RouterLink>
               ))}
             </Menu>
           </Box>
@@ -121,6 +124,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
+                component={RouterLink} to={`/category/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
