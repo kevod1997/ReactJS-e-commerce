@@ -1,33 +1,40 @@
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from "react";
 import ItemList from "./ItemList";
-import productos from "./productos";
-import { customFetch } from "./customFetch";
 import { useParams } from "react-router-dom";
+import { data } from "../mocks/mockData"
 
 const ItemListContainer = ({ saludo }) => {
-  //   console.log(props);
-  //   const{saludo}=props
+
+
   const [listProducts, setListProducts] = useState([]);
+  const [loading, setLoading]= useState(false)
 
-  useEffect(() => {
-    customFetch(productos)
-    .then(data=> setListProducts(data))
-  },[])
+  
 
-  const {idcategory, idproduct} = useParams();
+  useEffect(()=>{
+    setLoading(true)
+      data
+      .then((res)=> 
+      setListProducts(res))
+      .catch((error)=> console.log(error))
+      .finally(()=> setLoading(false))
+    }, [])
+  
 
-  const [products, setProducts] = useState([
-    {id:100, name: 'pelota boca', precio: 100, idcategory: 'deportivo'},
-    {id:100, name: 'pelota river', precio: 100, idcategory: 'deportivo'},
-    ]);
-  useEffect(() => {
-    if(!idcategory){
-      setProducts(products)
-    }else{
-      setProducts(products.filter((product) => product.idcategory == idcategory));
-    }
- }, [idcategory]);
+//   const {idcategory, idproduct} = useParams();
+
+//   const [products, setProducts] = useState([
+//     {id:100, name: 'pelota boca', precio: 100, idcategory: 'deportivo'},
+//     {id:100, name: 'pelota river', precio: 100, idcategory: 'deportivo'},
+//     ]);
+//   useEffect(() => {
+//     if(!idcategory){
+//       setProducts(products)
+//     }else{
+//       setProducts(products.filter((product) => product.idcategory == idcategory));
+//     }
+//  }, [idcategory]);
   
 
 
@@ -36,7 +43,7 @@ const ItemListContainer = ({ saludo }) => {
     <div className="itemContainer">
       <h1> {saludo} </h1>
     </div>
-    <ItemList listProducts={listProducts}/>
+    {loading ? <p>Cargando...</p> : <ItemList listProducts={listProducts}/>}
     </>
   );
 };
