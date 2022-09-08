@@ -40,7 +40,7 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <NavLink to="/">
+          <NavLink to="/" style={{textDecoration: 'none', color: 'white'}}>
             <Typography
               variant="h6"
               noWrap
@@ -88,9 +88,8 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.nombre} onClick={handleCloseNavMenu}>
-                  <NavLink
-                    to={page.enlace}>
+                <MenuItem style={{backgroundColor: '#6d4c41'}} key={page.nombre} onClick={handleCloseNavMenu}>
+                  <NavLink to={page.enlace} style={{textDecoration: 'none', color: 'white'}}>
                     <Typography textAlign="center">{page.nombre}</Typography>
                   </NavLink>
                 </MenuItem>
@@ -123,7 +122,10 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <NavLink to={page.enlace} style={{textDecoration:"none" }}> {page.nombre} </NavLink>
+                <NavLink to={page.enlace} style={{textDecoration: 'none', color: 'white'}}>
+                  {" "}
+                  {page.nombre}{" "}
+                </NavLink>
               </Button>
             ))}
           </Box>

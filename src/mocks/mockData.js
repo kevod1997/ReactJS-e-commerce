@@ -1,6 +1,6 @@
 const products = [
     {
-      id: 1,
+      id: '1',
       name: "Pan de Hamgurguesa",
       price: 150,
       stock: 40,
@@ -10,7 +10,7 @@ const products = [
         "https://i.ibb.co/PjMHQVC/brioche.jpg"
     },
       {
-        id: 2,
+        id: '2',
         name: "Focaccia",
         price: 850,
         stock: 20,
@@ -20,7 +20,7 @@ const products = [
           "https://i.ibb.co/F3n4dwK/Focaccia.jpg"
       },
       {
-        id: 3,
+        id: '3',
         name: "Hogaza de Centeno",
         price: 800,
         stock: 20,
@@ -29,7 +29,7 @@ const products = [
         img: "https://i.ibb.co/hfhBGbg/Hogazacenteno.jpg"
       },
       {
-        id: 4,
+        id: '4',
         name: "Hogaza",
         price: 700,
         stock: 20,
@@ -39,7 +39,7 @@ const products = [
         img: "https://i.ibb.co/8KKtj9c/Hogazapanmasamadre.jpg"
       },
       {
-        id: 5,
+        id: '5',
         name: "Pan integral",
         price: 600,
         stock: 20,
@@ -49,7 +49,7 @@ const products = [
           "https://i.ibb.co/B4YsXF7/Panintegral.jpg"
       },
       {
-        id: 6,
+        id: '6',
         name: "Pan de Molde",
         price: 500,
         stock: 15,
