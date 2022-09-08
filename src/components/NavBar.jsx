@@ -16,53 +16,47 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CartWidget";
-import { Link as RouterLink, Router } from 'react-router-dom';
+import { NavLink, useNavigate } from "react-router-dom";
+import { IndeterminateCheckBoxOutlined } from "@mui/icons-material";
 
-
-const pages = ["Productos", "Blog", "Contacto"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  { enlace: "/category/Clasicos", nombre: "Clasicos" },
+  { enlace: "/category/Oferta", nombre: "Oferta" },
+  { enlace: "/category/Temporales", nombre: "Temporales" },
+];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <NavLink to="/">
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>
+          </NavLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -94,11 +88,12 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <RouterLink key={page} to={`/category/${page}`}>
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.nombre} onClick={handleCloseNavMenu}>
+                  <NavLink
+                    to={page.enlace}>
+                    <Typography textAlign="center">{page.nombre}</Typography>
+                  </NavLink>
                 </MenuItem>
-                </RouterLink>
               ))}
             </Menu>
           </Box>
@@ -124,16 +119,16 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                component={RouterLink} to={`/category/${page}`}
-                key={page}
+                key={page.nombre}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <NavLink to={page.enlace} style={{textDecoration:"none" }}> {page.nombre} </NavLink>
               </Button>
             ))}
           </Box>
-          <CartWidget/>
+
+          <CartWidget />
         </Toolbar>
       </Container>
     </AppBar>

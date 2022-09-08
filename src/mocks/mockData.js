@@ -4,8 +4,8 @@ const products = [
       name: "Pan de Hamgurguesa",
       price: 150,
       stock: 40,
-      category: 'temporales',
-      detail: "Pan de Brioche, hecho a base de una pasta con huevos, levadura, leche, mantequilla y azúcar",
+      category: 'Temporales',
+      description: "Pan de Brioche, hecho a base de una pasta con huevos, levadura, leche, mantequilla y azúcar",
       img:
         "https://i.ibb.co/PjMHQVC/brioche.jpg"
     },
@@ -14,8 +14,8 @@ const products = [
         name: "Focaccia",
         price: 850,
         stock: 20,
-        category: 'habituales',
-        detail: "Pan de masa madre cubierto con hierbas y otros productos alimenticios",
+        category: 'Clasicos',
+        description: "Pan de masa madre cubierto con hierbas y otros productos alimenticios",
         img:
           "https://i.ibb.co/F3n4dwK/Focaccia.jpg"
       },
@@ -24,8 +24,8 @@ const products = [
         name: "Hogaza de Centeno",
         price: 800,
         stock: 20,
-        category: 'habituales',
-        detail: "Pan de masa madre, esponjoso y con la corteza crujiente, a base de centeno",
+        category: 'Clasicos',
+        description: "Pan de masa madre, esponjoso y con la corteza crujiente, a base de centeno",
         img: "https://i.ibb.co/hfhBGbg/Hogazacenteno.jpg"
       },
       {
@@ -33,8 +33,8 @@ const products = [
         name: "Hogaza",
         price: 700,
         stock: 20,
-        category: 'habituales',
-        detail:
+        category: 'Clasicos',
+        description:
           "Pan de masa madre, esponjoso y con la corteza crujiente",
         img: "https://i.ibb.co/8KKtj9c/Hogazapanmasamadre.jpg"
       },
@@ -43,8 +43,8 @@ const products = [
         name: "Pan integral",
         price: 600,
         stock: 20,
-        category: 'oferta',
-        detail: "Pan integral de masa madre, esponjoso y con la corteza crujiente",
+        category: 'Oferta',
+        description: "Pan integral de masa madre, esponjoso y con la corteza crujiente",
         img:
           "https://i.ibb.co/B4YsXF7/Panintegral.jpg"
       },
@@ -53,8 +53,8 @@ const products = [
         name: "Pan de Molde",
         price: 500,
         stock: 15,
-        category: 'oferta',
-        detail: "Pan de molde con masa madre. 500 gr.",
+        category: 'Oferta',
+        description: "Pan de molde con masa madre. 500 gr.",
         img:
           "https://i.ibb.co/y8m3MvG/molde.jpg"
       },

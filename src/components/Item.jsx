@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, {useState} from "react";
-import ItemCount from "./ItemCount";
+import React from "react";
+import { useNavigate} from 'react-router-dom'
+
 
 const Item = ({ product }) => {
-  const {img, name, detail, price, stock}= product
+  const {id, img, name, price}= product
+  const navigate = useNavigate()
 
   return (
     <>
@@ -12,11 +14,11 @@ const Item = ({ product }) => {
               <div className="card-body">
                 <h1 className="card-title d-flex justify-content-center">{name}</h1>
                 <p className="card-text d-flex justify-content-center">Precio: ${price}</p>
-                <ItemCount stock={stock} initial={1}/>
+                <a className='btn btn-primary d-flex justify-content-center' onClick={()=>navigate(`/detail/${id}`)}>Ver más</a>
+                {/* <ItemCount stock={stock} initial={1}/> */}
                 
               </div>
             </div>
-            {/* <ItemCount stock={productos.stock} setContador= {setContador} contador= {contador}/> */}
     </>
   );
 }

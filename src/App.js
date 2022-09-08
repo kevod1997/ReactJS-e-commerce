@@ -4,7 +4,6 @@ import { ThemeProvider } from "@mui/material";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import theme from "./MuiTheme";
-import FetchContainer from "./components/FetchContainer";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
@@ -20,14 +19,11 @@ function App() {
   <NavBar/>
   <Routes>
     <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
-    <Route path="/category/:idcategory" element={<ItemListContainer saludo={saludo}/>} />
-    <Route path="/product/:idproduct" element={<ItemDetailContainer/>} />
+    <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
+    <Route path="/detail/:id" element={<ItemDetailContainer/>} />
   </Routes>
   <Footer/>
   </ThemeProvider>
-      {/*  <ThemeProvider theme={theme}>
-      <FetchContainer/>
-  </ThemeProvider> */}
   </BrowserRouter>
   </>
   );

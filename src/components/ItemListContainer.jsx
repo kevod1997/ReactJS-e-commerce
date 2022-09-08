@@ -9,35 +9,24 @@ const ItemListContainer = ({ saludo }) => {
 
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading]= useState(false)
-
+  const {categoryId}=useParams()
   
 
   useEffect(()=>{
     setLoading(true)
       data
       .then((res)=> 
-      setListProducts(res))
+      {
+        if(categoryId){
+          setListProducts(res.filter((item)=> item.category === categoryId))
+        }else{
+         setListProducts(res)
+        }
+      })
       .catch((error)=> console.log(error))
       .finally(()=> setLoading(false))
-    }, [])
+    }, [categoryId])
   
-
-//   const {idcategory, idproduct} = useParams();
-
-//   const [products, setProducts] = useState([
-//     {id:100, name: 'pelota boca', precio: 100, idcategory: 'deportivo'},
-//     {id:100, name: 'pelota river', precio: 100, idcategory: 'deportivo'},
-//     ]);
-//   useEffect(() => {
-//     if(!idcategory){
-//       setProducts(products)
-//     }else{
-//       setProducts(products.filter((product) => product.idcategory == idcategory));
-//     }
-//  }, [idcategory]);
-  
-
-
   return (
     <>
     <div className="itemContainer">
