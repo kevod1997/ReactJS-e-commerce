@@ -34,7 +34,7 @@ function ItemCount({ initial, onAdd, stock }) {
           -
         </a>
         <a onClick={onAdd} className="btn btn-light">
-          Comprar
+          Agregar
         </a>
         <a
           onClick={sumar}

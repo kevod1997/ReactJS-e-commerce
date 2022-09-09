@@ -7,7 +7,7 @@ import theme from "./MuiTheme";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-
+import Test from "./test/Test";
 
 function App() {
   const saludo = "Sitio Web en construccion";
@@ -18,6 +18,7 @@ function App() {
   <ThemeProvider theme={theme}>
   <NavBar/>
   <Routes>
+    <Route path="/test" element={<Test />} />
     <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />

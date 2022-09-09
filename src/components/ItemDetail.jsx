@@ -22,7 +22,7 @@ const ItemDetail = ({ productDetail }) => {
   //   }
 
   const onAdd = () => {
-    alert("Tu compra esta siendo procesada");
+    alert("Agregaste el producto: " + name + ' al carrito');
   };
 
   return (
