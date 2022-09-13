@@ -7,11 +7,12 @@ import theme from "./MuiTheme";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import Test from "./test/Test";
+import Cart from "./components/Cart";
 
 function App() {
+
   const saludo = "Sitio Web en construccion";
-  // const [contador, setContador] = useState(1);
+
   return (
   <>
   <BrowserRouter>
@@ -22,6 +23,7 @@ function App() {
     <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />
+    <Route path="/cart" element={<Cart saludo={saludo}/>} />
   </Routes>
   <Footer/>
   </ThemeProvider>
