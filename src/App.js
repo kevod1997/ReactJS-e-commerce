@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
+import {CartProvider} from './context/CartContext'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
   <>
+  <CartProvider>
   <BrowserRouter>
   <ThemeProvider theme={theme}>
   <NavBar/>
@@ -28,6 +30,7 @@ function App() {
   <Footer/>
   </ThemeProvider>
   </BrowserRouter>
+  </CartProvider>
   </>
   );
 }
