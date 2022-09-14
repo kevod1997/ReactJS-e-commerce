@@ -62,3 +62,12 @@ code {
 .contador:hover{
   background-color: grey;
 }
+
+
+.elH1{
+  background-color: rgb(65, 43, 7);
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 50px;
+  padding: 10px;
+}

@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from "react";
+import React from "react";
 
-function ItemCount({ initial, onAdd, stock }) {
-  const [counter, setCounter] = useState(initial);
+function ItemCount({ initial, onAdd, stock, counter, setCounter }) {
 
   const sumar = () => {
     if (counter < stock) {
