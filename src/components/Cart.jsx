@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useCart } from "../context/CartContext";
+// import CartLayout from "./CartLayout";
 // import { useContext } from 'react'
 // import { CartContext } from '../context/CartContext'
 
@@ -9,7 +11,15 @@ const Cart = ({saludo}) => {
 
   const {cart}=useCart()
   console.log('carrito', cart)
-  return <h1 className='elH1' > {saludo} </h1>;
+  
+  return (
+<>
+  <h1 className='elH1' > {saludo} 
+  </h1>;
+  <div> {JSON.stringify(cart)} </div>
+    {/* <CartLayout cart={cart}/> */}
+  </>
+  );
 }
 
 export default Cart;
