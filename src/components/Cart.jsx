@@ -15,7 +15,10 @@ const Cart = ({saludo}) => {
   return (
 <>
   <h1 className='elH1' > {saludo} 
-  </h1>;
+  </h1>
+  <div> {cart.map((item)=> (
+    <p key={item.id}> {item.name} </p>
+  ))} </div>
   <div> {JSON.stringify(cart)} </div>
     {/* <CartLayout cart={cart}/> */}
   </>
