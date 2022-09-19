@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
+import TestLecturaDeProductos from "./test/TestLecturaProductos";
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
   <ThemeProvider theme={theme}>
   <NavBar/>
   <Routes>
-    {/* <Route path="/test" element={<Test />} /> */}
+    <Route path="/test" element={<TestLecturaDeProductos />} /> 
     <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />
