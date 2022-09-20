@@ -28,7 +28,7 @@ const ItemListContainer = ({ saludo }) => {
     })
     .catch((error)=>console.log(error))
     .finally(()=>setLoading(false))
-  }, []);
+  }, [categoryId]);
 
 
   //mock
