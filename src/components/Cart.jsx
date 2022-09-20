@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import CartItem from "./CartItem";
 // import CartLayout from "./CartLayout";
 // import { useContext } from 'react'
 // import { CartContext } from '../context/CartContext'
@@ -9,71 +11,49 @@ const Cart = ({ saludo }) => {
   //forma larga de llamar context
   //  const{cart} = useContext(CartContext)
 
-  const { cart } = useCart();
+  const { cart, cartTotal, removeItem, clear } = useCart();
   console.log("carrito", cart);
-
+  const navegate = useNavigate();
   return (
     <>
       <h1 className="elH1"> {saludo}</h1>
       <div>
-        {" "}
-        {cart.map((item) => (
-          <div
-            className="container d-flex justify-content-center"
-            key={item.id}
-          >
-            <div className="row">
-              <div
-                className="card col-3 d-flex justify-content-center "
-                style={{
-                  width: "50rem",
-                  height: "150px",
-                  margin: "15px",
-                  padding: "100px",
-                }}
-              >
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item  d-flex justify-content-center ">
-                    Producto: {item.name}
-                  </li>
-                  <li className="list-group-item  d-flex justify-content-center ">
-                    Cantidad: {item.quantity}
-                  </li>
-                  <li className="list-group-item  d-flex justify-content-center ">
-                    Precio: {item.quantity * item.price}
-                  </li>
-                  <div className="d-flex justify-content-center">
-                  <a
-                    className="btn btn-outline-primary"
-                    style={{
-                      marginLeft: "50px",
-                      marginRight: "50px",
-                      borderRadius: "10px",
-                      marginTop: "10px",
-                      marginBottom: '10px'
-                    }}
-                  >
-                    Seguir comprando
-                  </a>
-                  <a
-                    className="btn btn-outline-danger"
-                    style={{
-                      marginLeft: "50px",
-                      marginRight: "50px",
-                      borderRadius: "10px",
-                      marginTop: "10px",
-                      marginBottom: '10px'
-                    }}
-                  >
-                    Eliminar Producto
-                  </a>
-                  </div>
-                 
-                </ul>
+        {!cart.length ? (
+          <div>
+            <h2
+              className="alert alert-dark d-flex justify-content-center"
+              role="alert"
+            >
+              Tu carrito está vacío
+            </h2>
+            <a
+              className="btn btn-secondary d-flex justify-content-center"
+              onClick={() => navegate("/")}
+              style={{ marginLeft: "200px", marginRight: "200px" }}
+            >
+              Ir a Comprar
+            </a>
+          </div>
+        ) : (
+          <div>
+           {cart.map((purchase)=> <CartItem purchase={purchase} key={purchase.id} />)}
+            {/* TOTAL PURCHASE */}
+            <div className="card text-center" style={{marginLeft: '225px', marginRight: '225px'}}>
+              <div className="card-header">Total en el Carrito</div>
+              <div className="card-body">
+                <p className="card-text">
+                 Monto total: $ {cartTotal()}
+                </p>
+                <a href="#" className="btn btn-success" style={{marginLeft: '5px', marginRight: '5px'}}>
+                  Finalizar Compra
+                </a>
+                <a href="#" className="btn btn-danger" onClick={clear} style={{marginLeft: '5px', marginRight: '5px'}}>
+                  Vaciar Carrito
+                </a>
               </div>
             </div>
           </div>
-        ))}{" "}
+        )}
       </div>
       {/* <CartLayout cart={cart}/> */}
     </>

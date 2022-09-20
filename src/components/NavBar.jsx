@@ -129,8 +129,10 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-
+          <NavLink to='/cart'>
           <CartWidget />
+          </NavLink>
+         
         </Toolbar>
       </Container>
     </AppBar>

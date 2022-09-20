@@ -32,7 +32,7 @@ function ItemCount({ initial, onAdd, stock, counter, setCounter }) {
         >
           -
         </a>
-        <a onClick={onAdd} className="btn btn-light">
+        <a onClick={counter >= 1 ? onAdd : null } className="btn btn-light">
           Agregar
         </a>
         <a
