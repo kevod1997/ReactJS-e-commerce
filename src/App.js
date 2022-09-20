@@ -22,7 +22,7 @@ function App() {
   <ThemeProvider theme={theme}>
   <NavBar/>
   <Routes>
-    <Route path="/test" element={<TestLecturaDeProductos />} /> 
+    {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
     <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />

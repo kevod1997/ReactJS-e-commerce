@@ -46,7 +46,7 @@ const products = [
         category: 'Oferta',
         description: "Pan integral de masa madre, esponjoso y con la corteza crujiente",
         img:
-          "https://i.ibb.co/B4YsXF7/Panintegral.jpg"
+        "https://i.ibb.co/B4YsXF7/Panintegral.jpg"
       },
       {
         id: '6',
