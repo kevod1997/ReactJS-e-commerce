@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
-import TestLecturaDeProductos from "./test/TestLecturaProductos";
 
 function App() {
 

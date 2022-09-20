@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function ItemCount({ initial, onAdd, stock, counter, setCounter }) {
+function ItemCount({ onAdd, stock, counter, setCounter }) {
 
   const sumar = () => {
     if (counter < stock) {

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { useCart } from '../context/CartContext'
 
-export default function CartItem({purchase}) {
+export default function CartItem({purchase, navegate}) {
     const{removeItem}= useCart()
   return (
         <div

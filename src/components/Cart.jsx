@@ -11,7 +11,7 @@ const Cart = ({ saludo }) => {
   //forma larga de llamar context
   //  const{cart} = useContext(CartContext)
 
-  const { cart, cartTotal, removeItem, clear } = useCart();
+  const { cart, cartTotal, clear } = useCart();
   console.log("carrito", cart);
   const navegate = useNavigate();
   return (
@@ -36,10 +36,10 @@ const Cart = ({ saludo }) => {
           </div>
         ) : (
           <div>
-           {cart.map((purchase)=> <CartItem purchase={purchase} key={purchase.id} />)}
             {/* TOTAL PURCHASE */}
             <div className="card text-center" style={{marginLeft: '225px', marginRight: '225px'}}>
               <div className="card-header">Total en el Carrito</div>
+              <div>{cart.map((purchase)=> <CartItem purchase={purchase} key={purchase.id} />)}</div>
               <div className="card-body">
                 <p className="card-text">
                  Monto total: $ {cartTotal()}
