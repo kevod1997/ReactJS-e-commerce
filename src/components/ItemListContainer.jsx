@@ -5,8 +5,9 @@ import { useParams } from "react-router-dom";
 // import { data } from "../mocks/mockData";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { database } from "../firebase/firebase";
+import Loader from "./Loader";
 
-const ItemListContainer = ({ saludo }) => {
+const ItemListContainer = () => {
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const { categoryId } = useParams();
@@ -50,10 +51,7 @@ const ItemListContainer = ({ saludo }) => {
 
   return (
     <>
-      <div className="itemContainer">
-        <h1> {saludo} </h1>
-      </div>
-      {loading ? <p>Cargando...</p> : <ItemList listProducts={listProducts} />}
+      {loading ? <div><Loader/></div> : <ItemList listProducts={listProducts} />}
     </>
   );
 };

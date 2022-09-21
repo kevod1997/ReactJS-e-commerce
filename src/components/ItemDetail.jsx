@@ -48,7 +48,7 @@ const ItemDetail = ({ productDetail }) => {
   return (
     <div>
       <div className="container-fluid">
-        <div className="row" style={{ margin: "5px" }}>
+        <div className="row" style={{ margin: "5px"}}>
           <div
             className="card col-3"
             style={{ width: "19rem", margin: "30px" }}

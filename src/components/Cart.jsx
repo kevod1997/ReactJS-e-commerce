@@ -7,7 +7,7 @@ import CartItem from "./CartItem";
 // import { useContext } from 'react'
 // import { CartContext } from '../context/CartContext'
 
-const Cart = ({ saludo }) => {
+const Cart = () => {
   //forma larga de llamar context
   //  const{cart} = useContext(CartContext)
 
@@ -16,20 +16,20 @@ const Cart = ({ saludo }) => {
   const navegate = useNavigate();
   return (
     <>
-      <h1 className="elH1"> {saludo}</h1>
-      <div>
+      <div style={{marginTop: '175px'}}>
         {!cart.length ? (
-          <div>
+          <div className="card text-center" style={{marginLeft: '225px', marginRight: '225px',backgroundColor: '#D3D3D3'}}>
             <h2
               className="alert alert-dark d-flex justify-content-center"
               role="alert"
+              style={{ marginLeft: '200px', marginRight: '200px', marginTop: '25px'}}
             >
               Tu carrito está vacío
             </h2>
             <a
               className="btn btn-secondary d-flex justify-content-center"
               onClick={() => navegate("/")}
-              style={{ marginLeft: "200px", marginRight: "200px" }}
+              style={{ marginLeft: "200px", marginRight: "200px", marginBottom: '25px' }}
             >
               Ir a Comprar
             </a>

@@ -11,9 +11,6 @@ import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
 
 function App() {
-
-  const saludo = "Sitio Web en construccion";
-
   return (
   <>
   <CartProvider>
@@ -22,10 +19,11 @@ function App() {
   <NavBar/>
   <Routes>
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
-    <Route path="/" element={<ItemListContainer saludo={saludo}/>} />
-    <Route path="/category/:categoryId" element={<ItemListContainer saludo={saludo}/>} />
+    <Route path="/ProyectoCoderReact" element={<ItemListContainer/>} />
+    <Route path="/" element={<ItemListContainer/>} />
+    <Route path="/category/:categoryId" element={<ItemListContainer/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />
-    <Route path="/cart" element={<Cart saludo={saludo}/>} />
+    <Route path="/cart" element={<Cart/>} />
   </Routes>
   <Footer/>
   </ThemeProvider>
