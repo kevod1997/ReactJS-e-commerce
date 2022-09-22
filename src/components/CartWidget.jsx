@@ -9,7 +9,7 @@ const CartWidget = () => {
     <>
       <div>
         <ShoppingCartIcon color="secondary" fontSize="large" />
-        <span> {cartQuantity() || ""} </span>
+        <span style={{color: 'white', fontSize: '20px'}}> {cartQuantity() || ""} </span>
         {/* condicional tradicional if y else*/}
         {/* <span>{!cart.lenght ? '' : cartQuantity()  }</span> */}
         {/* condicional ternario if sin else */}

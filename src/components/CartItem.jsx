@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext'
 
-export default function CartItem({purchase, navegate}) {
+export default function CartItem({purchase}) {
     const{removeItem}= useCart()
+    const navegate = useNavigate();
+
   return (
         <div
           className="container d-flex justify-content-center"

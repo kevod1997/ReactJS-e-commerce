@@ -12,7 +12,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
 
@@ -93,8 +92,7 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          <Typography 
             variant="h5"
             noWrap
             component="a"
@@ -112,6 +110,7 @@ const NavBar = () => {
           >
             LOGO
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -129,7 +128,6 @@ const NavBar = () => {
           <NavLink to='/cart'>
           <CartWidget />
           </NavLink>
-         
         </Toolbar>
       </Container>
     </AppBar>

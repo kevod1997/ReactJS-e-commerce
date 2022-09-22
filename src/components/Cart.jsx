@@ -16,20 +16,36 @@ const Cart = () => {
   const navegate = useNavigate();
   return (
     <>
-      <div style={{marginTop: '175px'}}>
+      <div style={{ marginTop: "75px" }}>
         {!cart.length ? (
-          <div className="card text-center" style={{marginLeft: '225px', marginRight: '225px',backgroundColor: '#D3D3D3'}}>
+          <div
+            className="card text-center"
+            style={{
+              marginLeft: "225px",
+              marginRight: "225px",
+              backgroundColor: "#D3D3D3",
+              marginBottom: "300px",
+            }}
+          >
             <h2
               className="alert alert-dark d-flex justify-content-center"
               role="alert"
-              style={{ marginLeft: '200px', marginRight: '200px', marginTop: '25px'}}
+              style={{
+                marginLeft: "200px",
+                marginRight: "200px",
+                marginTop: "25px",
+              }}
             >
               Tu carrito está vacío
             </h2>
             <a
               className="btn btn-secondary d-flex justify-content-center"
               onClick={() => navegate("/")}
-              style={{ marginLeft: "200px", marginRight: "200px", marginBottom: '25px' }}
+              style={{
+                marginLeft: "200px",
+                marginRight: "200px",
+                marginBottom: "25px",
+              }}
             >
               Ir a Comprar
             </a>
@@ -37,17 +53,32 @@ const Cart = () => {
         ) : (
           <div>
             {/* TOTAL PURCHASE */}
-            <div className="card text-center" style={{marginLeft: '225px', marginRight: '225px'}}>
+            <div
+              className="card text-center"
+              style={{ marginLeft: "225px", marginRight: "225px" }}
+            >
               <div className="card-header">Total en el Carrito</div>
-              <div>{cart.map((purchase)=> <CartItem purchase={purchase} key={purchase.id} />)}</div>
+              <div>
+                {cart.map((purchase) => (
+                  <CartItem purchase={purchase} key={purchase.id} />
+                ))}
+              </div>
               <div className="card-body">
-                <p className="card-text">
-                 Monto total: $ {cartTotal()}
-                </p>
-                <a href="#" className="btn btn-success" style={{marginLeft: '5px', marginRight: '5px'}}>
+                <p className="card-text">Monto total: $ {cartTotal()}</p>
+                <a
+                  href="#"
+                  className="btn btn-success"
+                  style={{ marginLeft: "5px", marginRight: "5px" }}
+                  onClick={() => navegate("/checkout")}
+                >
                   Finalizar Compra
                 </a>
-                <a href="#" className="btn btn-danger" onClick={clear} style={{marginLeft: '5px', marginRight: '5px'}}>
+                <a
+                  href="#"
+                  className="btn btn-danger"
+                  onClick={clear}
+                  style={{ marginLeft: "5px", marginRight: "5px" }}
+                >
                   Vaciar Carrito
                 </a>
               </div>
