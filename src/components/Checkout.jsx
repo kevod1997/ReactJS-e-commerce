@@ -86,10 +86,18 @@ export default function Checkout() {
           </form>
         </div>
        : 
-        <div>
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            backgroundColor: 'whitesmoke',
+            margin: '250px',
+            borderRadius: '10px',
+          }} >
           <h2>Gracias por su compra!</h2>
           <h4> Su orden es: {orderId} </h4>
-          <button onClick={()=> navigate('/')}> Volver</button>
+          <button className="btn btn-success" onClick={()=> navigate('/')} style={{margin:'10px'}} > Volver</button>
         </div>
       }
     </div>

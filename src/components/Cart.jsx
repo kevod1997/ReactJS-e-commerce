@@ -24,7 +24,7 @@ const Cart = () => {
               marginLeft: "225px",
               marginRight: "225px",
               backgroundColor: "#D3D3D3",
-              marginBottom: "300px",
+              margin: "200px",
             }}
           >
             <h2
