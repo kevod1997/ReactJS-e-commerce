@@ -10,6 +10,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
 import Checkout from "./components/Checkout";
+import { Logo } from "./components/Logo";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
   <BrowserRouter>
   <ThemeProvider theme={theme}>
   <NavBar/>
+  <Logo/>
   <Routes>
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
     <Route path="/ProyectoCoderReact" element={<ItemListContainer/>} />
