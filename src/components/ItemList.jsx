@@ -5,7 +5,7 @@ function ItemList({ listProducts }) {
   return (
     <>
       <div className="container-fluid">
-        <div className="row" style={{ margin: "5px" }}>
+        <div className="row">
           {listProducts.map((product) => (
             <Item key={product.id} product={product} />
           ))}

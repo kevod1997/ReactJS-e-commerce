@@ -11,6 +11,7 @@ import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
 import Checkout from "./components/Checkout";
 import { Logo } from "./components/Logo";
+import { Home } from "./components/Home";
 
 function App() {
 
@@ -29,8 +30,8 @@ function App() {
   <Logo/>
   <Routes>
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
-    <Route path="/ProyectoCoderReact" element={<ItemListContainer/>} />
-    <Route path="/" element={<ItemListContainer/>} />
+    <Route path="/ProyectoCoderReact" element={<Home/>} />
+    <Route path="/" element={<Home/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />
     <Route path="/cart" element={<Cart/>} />

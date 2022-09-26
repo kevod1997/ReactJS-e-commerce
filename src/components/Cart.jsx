@@ -16,15 +16,22 @@ const Cart = () => {
   const navegate = useNavigate();
   return (
     <>
-      <div style={{ marginTop: "75px" }}>
+      <div
+        style={{
+          
+        }}
+      >
         {!cart.length ? (
           <div
             className="card text-center"
             style={{
-              marginLeft: "225px",
-              marginRight: "225px",
               backgroundColor: "#D3D3D3",
-              margin: "200px",
+              backgroundImage:
+            'url("https://img.freepik.com/free-psd/bread-bio-packaging-real-context-mockup_23-2149293557.jpg?w=1060&t=st=1664200032~exp=1664200632~hmac=8a78a4cbc54e7e9b1c9a8420d42567b8c57c25ef201f4f56cb8ee606f448319b")',
+          paddingLeft: "225px",
+          paddingRight: "225px",
+          padding: "300px",
+          backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
             }}
           >
             <h2

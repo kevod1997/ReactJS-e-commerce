@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: grey;
 }
 
 code {
@@ -70,8 +69,7 @@ code {
 }
 
 .footer {
-  height: 150px;
-  margin-top: 200px;
+  height: 200px;
   background-color: #6d4c41;
   position: relative;
   left: 0;
