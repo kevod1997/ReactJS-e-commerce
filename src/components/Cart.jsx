@@ -17,9 +17,6 @@ const Cart = () => {
   return (
     <>
       <div
-        style={{
-          
-        }}
       >
         {!cart.length ? (
           <div

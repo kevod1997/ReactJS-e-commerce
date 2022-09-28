@@ -7,7 +7,10 @@ function ItemList({ listProducts }) {
       <div className="container-fluid">
         <div className="row">
           {listProducts.map((product) => (
-            <Item key={product.id} product={product} />
+            <div className="col-md-4" key={product.id}>
+              <Item  product={product} />
+            </div>
+            
           ))}
         </div>
       </div>
