@@ -13,7 +13,10 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Logo } from "./Logo";
+import Grid from '@mui/material/Grid';
+
 
 const pages = [
   { enlace: "/category/Clasicos", nombre: "Clasicos" },
@@ -36,6 +39,20 @@ const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Link to="/">
+            <img
+              className="firstLogo"
+              style={{
+                height: "95px",
+                width: "105%",
+                cursor: "pointer",
+                marginTop: "5px",
+                marginBottom: "5px",
+              }}
+              src="https://i.ibb.co/tJtJSBp/1.jpg"
+              alt="logo"
+            />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -66,13 +83,29 @@ const NavBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem style={{backgroundColor: '#6d4c41'}} key={page.nombre} onClick={handleCloseNavMenu}>
-                  <NavLink to={page.enlace} style={{textDecoration: 'none', color: 'white'}}>
+                <MenuItem
+                  style={{ backgroundColor: "#6d4c41" }}
+                  key={page.nombre}
+                  onClick={handleCloseNavMenu}
+                >
+                  <NavLink
+                    to={page.enlace}
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
                     <Typography textAlign="center">{page.nombre}</Typography>
                   </NavLink>
                 </MenuItem>
               ))}
             </Menu>
+            <Link to={"/"}>
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+            >
+                <Logo sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            </Grid>
+            </Link>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -81,15 +114,24 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <NavLink to={page.enlace} style={{textDecoration: 'none', color: 'white', marginRight: '15px', marginLeft: '15px',fontWeight: 'bold'}}>
+                <NavLink
+                  to={page.enlace}
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    marginRight: "15px",
+                    marginLeft: "15px",
+                    fontWeight: "bold",
+                  }}
+                >
                   {" "}
                   {page.nombre}{" "}
                 </NavLink>
               </Button>
             ))}
           </Box>
-          <NavLink to='/cart'>
-          <CartWidget />
+          <NavLink to="/cart">
+            <CartWidget />
           </NavLink>
         </Toolbar>
       </Container>

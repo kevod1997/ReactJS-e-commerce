@@ -19,6 +19,7 @@ const Item = ({ product }) => {
       quantity: compra
     };
     addItem(purchase);
+    alert('Agregaste el producto al carrito')
   };
 
   return (

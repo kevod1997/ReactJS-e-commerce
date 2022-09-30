@@ -76,3 +76,10 @@ code {
   bottom: 0;
   right: 0;
 }
+
+
+@media only screen and (max-width:899px){
+.firstLogo{
+  display: none;
+}
+}
