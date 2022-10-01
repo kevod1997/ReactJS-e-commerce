@@ -11,23 +11,6 @@ const ItemDetail = ({ productDetail }) => {
   const { name, description, price, stock, img, id } = productDetail;
   const navigate = useNavigate()
   const {addItem}= useCart()
-  // const ondAdd = () => {
-  //   // cont === 0
-  //   //   ? alert("No compraste caramelos")
-  //   //   : cont === 1
-  //   //   ? alert("Compraste " + cont + " caramelo")
-  //   //   : alert("Compraste " + cont + " caramelos");
-  //   // Son equivalentes
-  //   if (counter === 0) {
-  //     alert("No compraste nada");
-  //     return;
-  //   } else if (counter === 1) {
-  //     alert("Compraste " + counter + " " + name + " por un valor de" + " $ " + price * counter);
-  //   } else {
-  //     alert("Compraste " + counter + " " + name + " por un valor de" + " $ " + price * counter);
-  //   }
-  //   }
-
   const onAdd = () => {
     let purchase = {
       id,
