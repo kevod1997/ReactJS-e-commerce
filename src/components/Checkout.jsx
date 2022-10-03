@@ -44,53 +44,102 @@ export default function Checkout() {
   };
   if (loader) {
     return (
-      <p>
-        <Loader />
-      </p>
+      <div
+        style={{
+          backgroundColor: "#D3D3D3",
+          backgroundImage:
+            'url("https://img.freepik.com/premium-photo/fresh-homemade-wheat-bread-baking-from-rye-flour-top-view-rustic-style_187166-54561.jpg?w=1380")',
+          paddingLeft: "250px",
+          paddingRight: "255px",
+          padding: "50px",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <p>
+          <Loader />
+        </p>
+      </div>
     );
   }
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "#c9c9c9",
+        backgroundImage:
+          'url("https://img.freepik.com/premium-photo/fresh-homemade-wheat-bread-baking-from-rye-flour-top-view-rustic-style_187166-54561.jpg?w=1380")',
+        paddingLeft: "250px",
+        paddingRight: "255px",
+        padding: "50px",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       {!orderId ? (
-        <div className="card d-flex justify-content-center" style={{margin: '150px'}}>
+        <div
+          className="card d-flex justify-content-center"
+          style={{
+            margin: "150px 300px",
+            paddingTop: "20px",
+            backgroundColor:
+              "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
+          }}
+        >
           <div>
-            <h3 className="d-flex justify-content-center">Finalizar Compra</h3>
-            <h4 className="d-flex justify-content-center">Por favor complete los siguientes campos</h4>
+            <span className="d-flex justify-content-center">
+              <h5
+                style={{
+                  borderBottom: "2px solid grey",
+                  fontWeight: "inherit",
+                }}
+              >
+                Por favor complete los siguientes campos
+              </h5>
+            </span>
           </div>
-          <form
-          className="d-flex justify-content-center"
-            onSubmit={finalizarCompra}
-            style={{marginBottom: '50px', marginTop: '30px'}}
-          >
-            <input
+          <div className="containter">
             
-              style={{ margin: "5px" }}
-              type="text"
-              placeholder="Ingresa tu nombre y Apellido"
-              name="name"
-              onChange={datosComprador}
-            />
-            <input
-            
-              style={{ margin: "5px" }}
-              type="number"
-              placeholder="Ingresa tu telefono"
-              name="phone"
-              onChange={datosComprador}
-            />
-            <input
-            
-              style={{ margin: "5px" }}
-              type="email"
-              placeholder="Ingresa tu correo"
-              name="email"
-              onChange={datosComprador}
-            />
-            <div className="d-flex justify-content-center">
-            <button type="submit" className="btn btn-outline-success d-flex justify-content-center">Comprar</button>
-            </div>
-            
-          </form>
+              <form
+                className="d-flex justify-content-center"
+                onSubmit={finalizarCompra}
+                style={{ marginBottom: "25px", marginTop: "30px" }}
+              >
+                <div className="row">
+                <div className="col-12 d-flex justify-content-center" style={{marginBottom: '20px'}}>
+                  <input
+                    style={{ margin: "5px" }}
+                    type="text"
+                    placeholder="Ingresa tu nombre y Apellido"
+                    name="name"
+                    onChange={datosComprador}
+                  />
+                  <input
+                    style={{ margin: "5px" }}
+                    type="number"
+                    placeholder="Ingresa tu telefono"
+                    name="phone"
+                    onChange={datosComprador}
+                  />
+                  <input
+                    style={{ margin: "5px" }}
+                    type="email"
+                    placeholder="Ingresa tu correo"
+                    name="email"
+                    onChange={datosComprador}
+                  />
+                </div>
+                <div className="col-12 d-flex justify-content-center">
+                  <button
+                    style={{ marginBottom: "25px" }}
+                    type="submit"
+                    className="btn btn-outline-dark d-flex justify-content-center "
+                  >
+                    Finalizar Compra
+                  </button>
+                </div>
+                </div>
+              </form>
+          </div>
         </div>
       ) : (
         <div
@@ -99,14 +148,14 @@ export default function Checkout() {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            backgroundColor: "whitesmoke",
-            margin: "250px",
+            backgroundColor: "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
+            margin: "250px 400px",
             borderRadius: "10px",
           }}
         >
-          <h2>Gracias por comprar!</h2>
+          <h4 style={{paddingTop:'10px'}} >Gracias por tu compra! </h4>
           <button
-            className="btn btn-success"
+            className="btn btn-dark"
             onClick={() => navigate("/")}
             style={{ margin: "10px" }}
           >

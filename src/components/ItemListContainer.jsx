@@ -16,7 +16,7 @@ const ItemListContainer = () => {
 
   useEffect (()=> {
     setLoading(true)
-    const products = categoryId ? query( collection(database, "products"), where("category", "==", categoryId) ) :collection(database, "products")
+    const products = categoryId ? query( collection(database, "products"), where("category", "==", categoryId) ) : collection(database, "products")
     getDocs(products)
     .then((res)=> {
       const list = res.docs.map((product)=> {
@@ -51,7 +51,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div style={{height: '100vh',backgroundImage: 'url("https://img.freepik.com/free-photo/rolling-pin-eggs-flour_144627-8691.jpg?w=1060&t=st=1664200115~exp=1664200715~hmac=9d6cff08e7a978eef712788804aa432b42a10f13314cf28dc6dbc3daaa3514a2")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
+      <div style={{height: '105vh',backgroundImage: 'url("https://img.freepik.com/free-photo/mid-section-male-baker-holding-paper-bag-with-breads_23-2147883355.jpg?w=1060&t=st=1664820586~exp=1664821186~hmac=bc7e01466de035a41e62e1647d9e841453bc368bcf0d642f2d4e5e2a3c065cea")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
       {loading ? <div><Loader/></div> : <div> <ItemList listProducts={listProducts} /></div>}
       </div>
       

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 import React from "react";
 
@@ -25,23 +26,13 @@ function ItemCount({ onAdd, stock, counter, setCounter }) {
         <span>{counter} </span>{" "}
       </p>
       <div className="d-flex justify-content-center">
-        <a
-          onClick={restar}
-          style={{ margin: "4px" }}
-          className="btn btn-danger"
-        >
-          -
-        </a>
-        <a onClick={counter >= 1 ? onAdd : null } className="btn btn-light">
+        <FaMinus onClick={restar}
+          style={{ marginRight: "20px", cursor:'pointer' }}/>
+        <a onClick={counter >= 1 ? onAdd : null } className="btn btn-outline-dark" style={{marginTop: '-10px'}} >
           Agregar
         </a>
-        <a
-          onClick={sumar}
-          style={{ margin: "4px" }}
-          className="btn btn-success"
-        >
-          +
-        </a>
+        <FaPlus onClick={sumar}
+          style={{ marginLeft: "20px", cursor:'pointer' }}/>
       </div>
     </>
   );

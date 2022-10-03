@@ -18,40 +18,38 @@ const Cart = () => {
       <div>
         {!cart.length ? (
           <div
-            className="card text-center"
+            className=""
             style={{
               backgroundColor: "#D3D3D3",
               backgroundImage:
                 'url("https://img.freepik.com/free-psd/bread-bio-packaging-real-context-mockup_23-2149293557.jpg?w=1060&t=st=1664200032~exp=1664200632~hmac=8a78a4cbc54e7e9b1c9a8420d42567b8c57c25ef201f4f56cb8ee606f448319b")',
-              paddingLeft: "225px",
-              paddingRight: "225px",
-              padding: "300px",
+              paddingLeft: "250px",
+              paddingRight: "255px",
+              padding: "200px",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }}
           >
-            <h2
+            <div className="d-grid gap-2 col-6 mx-auto">
+            <h4
               className="alert alert-dark d-flex justify-content-center"
               role="alert"
               style={{
-                marginLeft: "200px",
-                marginRight: "200px",
-                marginTop: "25px",
+                fontWeight:'lighter'
               }}
             >
               Tu carrito está vacío
-            </h2>
+            </h4>
             <a
-              className="btn btn-secondary d-flex justify-content-center"
-              onClick={() => navegate("/")}
+              className="btn btn-secondary btn-lg d-flex justify-content-center"
+              onClick={() => navegate("/products")}
               style={{
-                marginLeft: "200px",
-                marginRight: "200px",
-                marginBottom: "25px",
+
               }}
             >
               Ir a Comprar
             </a>
+            </div>
           </div>
         ) : (
           <div
@@ -142,7 +140,7 @@ const Cart = () => {
                   >
                     <span
                       style={{ cursor: "pointer", fontWeight: "lighter" }}
-                      onClick={() => navegate("/")}
+                      onClick={() => navegate("/products")}
                     >
                       <FaArrowLeft /> Ir a Productos
                     </span>

@@ -31,6 +31,7 @@ function App() {
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
     <Route path="/ProyectoCoderReact" element={<Home/>} />
     <Route path="/" element={<Home/>} />
+    <Route path="/products" element={<ItemListContainer/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer/>} />
     <Route path="/detail/:id" element={<ItemDetailContainer/>} />
     <Route path="/cart" element={<Cart/>} />

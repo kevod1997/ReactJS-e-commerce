@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <>
         <div style={{display: 'flex', justifyContent: 'center', backgroundImage: 'url("https://img.freepik.com/free-photo/slice-bread-with-baguette-tablecloth_114579-5829.jpg?w=1060&t=st=1664200828~exp=1664201428~hmac=5e1933c4ae4a6e3c2b92976902b45a43b89ebd216209e1c955b8f9e62288945f")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
-            <img style={{padding: '15px', margin: '15px'}} src="https://i.postimg.cc/hPVdg2BS/wheat-bread-special-2.jpg" alt="welcome logo" />
+            <img className='imageHome' style={{padding: '15px', margin: '15px'}} src="https://i.postimg.cc/hPVdg2BS/wheat-bread-special-2.jpg" alt="welcome logo" />
         </div>
         <div style={{display: 'flex', justifyContent: 'center', height:'125px', backgroundColor: '#B6121B', alignItems: 'center'}}><p style={{marginBottom: '0px', fontWeight: 'bold', fontSize: '25px',  color: '#FFC27F', textAlign: 'center', borderTop: 'solid 2px', borderBottom: 'solid 2px',padding: '10px'}}>DESCUBRI NUESTROS PRODUCTOS</p></div>
         <ItemListContainer/>
@@ -32,7 +32,7 @@ export const Home = () => {
             marginRight: '40px',
             fontWeight: 'bold'
           }}
-          >pakispan@gmail.com</p>
+          >contacto@pakispan.com</p>
         </div>
       </div>
     </>

@@ -27,7 +27,7 @@ const Item = ({ product }) => {
 
   return (
     <>
-      <ImageListItem key={product.img} style={{ margin: "3px" }}>
+      <ImageListItem className="cardsHome" key={product.img} style={{ margin: "3px" }}>
         <img
           className="imgCard"
           src={`${product.img}?w=248&fit=crop&auto=format`}
@@ -40,6 +40,7 @@ const Item = ({ product }) => {
         <ImageListItemBar
           title={product.name}
           subtitle={`$ ${product.price}`}
+          sx={{borderEndStartRadius: '15px', borderEndEndRadius:'15px'}}
           actionIcon={
             <IconButton
               sx={{ color: "rgba(255, 255, 255, 0.54)" }}

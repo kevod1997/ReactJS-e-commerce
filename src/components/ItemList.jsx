@@ -6,7 +6,7 @@ import ImageList from '@mui/material/ImageList';
 function ItemList({ listProducts }) {
   return (
     <>
-      <Container style={{ display: "flex", justifyContent: "center", paddingTop: '10px' }}>
+      <Container style={{ display: "flex", justifyContent: "center", paddingTop: '30px' }}>
         <ImageList sx={{ width: 900, height: 650 }} key="Subheader" cols={3}>
           {listProducts.map((product) => (
             <Item key={product.id} product={product} />

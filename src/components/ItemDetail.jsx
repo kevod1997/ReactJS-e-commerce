@@ -30,18 +30,18 @@ const ItemDetail = ({ productDetail }) => {
 
   return (
     <div>
-      <div className="container-fluid">
-        <div className="row" style={{ margin: "5px"}}>
+      <div className="container-fluid d-flex justify-content-center" style={{padding: '25px 0px'}}>
+        <div className="row" style={{ padding: "5px"}}>
           <div
-            className="card col-3"
-            style={{ width: "19rem", margin: "30px" }}
+            className="card col-3 d-flex justify-content-center"
+            style={{ width: "19rem", margin: "30px", padding: '0px', border: '0px' }}
           >
             <img src={img} className="card-img-top" />
             <div className="card-body">
-              <h1 className="card-title d-flex justify-content-center">
+              <h3 className="card-title d-flex justify-content-center">
                 {name}
-              </h1>
-              <p className="card-text d-flex justify-content-center">
+              </h3>
+              <p className="card-text d-flex justify-content-center" style={{margin: '5px 20px'}}>
                 {description}
               </p>
               <p className="card-text d-flex justify-content-center">
@@ -49,11 +49,16 @@ const ItemDetail = ({ productDetail }) => {
               </p>
               {!compra
                ? <ItemCount stock={stock} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} /> 
-               : 
-              <div>
-                  <button onClick={()=>navigate('/')}>Seguir Comprando</button>
-                  <button onClick={()=>navigate('/cart')}>Ir al Carrito</button>
-               </div>}
+               :
+               <>
+              <div className="card-text d-flex justify-content-center" style={{paddingBottom: '10px'}}>
+                  <button className="btn btn-outline-dark" onClick={()=>navigate('/cart')}>Ir al Carrito</button>
+               </div>
+               <div className="card-text d-flex justify-content-center">
+                 <button className="btn btn-outline-dark" onClick={()=>navigate('/products')}>Seguir Comprando</button>
+               </div>
+               </> 
+               }
             </div>
           </div>
         </div>
