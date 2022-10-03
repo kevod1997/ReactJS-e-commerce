@@ -10,7 +10,7 @@ const Cart = () => {
   //forma larga de llamar context
   //  const{cart} = useContext(CartContext)
 
-  const { cart, cartTotal, clear, cartQuantity } = useCart();
+  const { cart, cartTotal, clear } = useCart();
   const navegate = useNavigate();
 
   return (
@@ -88,7 +88,7 @@ const Cart = () => {
                     borderTopRightRadius: '10px'
                   }}
                 >
-                  Carrito ({cartQuantity()}){" "}
+                  Carrito ({cart.length}){" "}
                   <FaRegTrashAlt
                     onClick={clear}
                     style={{ marginLeft: "5px", cursor: "pointer" }}
