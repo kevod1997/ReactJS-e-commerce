@@ -11,7 +11,7 @@ import Cart from "./components/Cart";
 import {CartProvider} from './context/CartContext'
 import Checkout from "./components/Checkout";
 import { Home } from "./components/Home";
-import Demo from "./test/Demo";
+
 
 function App() {
 
@@ -27,7 +27,6 @@ function App() {
   <BrowserRouter>
   <ThemeProvider theme={theme}>
   <NavBar/>
-  <Demo/>
   <Routes>
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
     <Route path="/ProyectoCoderReact" element={<Home/>} />

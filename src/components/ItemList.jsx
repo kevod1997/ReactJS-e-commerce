@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Item from "./Item";
+import Container from "@mui/material/Container";
+import ImageList from '@mui/material/ImageList';
 function ItemList({ listProducts }) {
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
+      <Container style={{ display: "flex", justifyContent: "center", paddingTop: '10px' }}>
+        <ImageList sx={{ width: 900, height: 650 }} key="Subheader" cols={3}>
           {listProducts.map((product) => (
-            <div className="col-md-4" key={product.id}>
-              <Item  product={product} />
-            </div>
-            
+            <Item key={product.id} product={product} />
           ))}
-        </div>
-      </div>
+        </ImageList>
+      </Container>
     </>
   );
 }

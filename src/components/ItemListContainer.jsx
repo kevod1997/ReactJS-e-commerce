@@ -51,7 +51,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div style={{height: '130vh',backgroundImage: 'url("https://img.freepik.com/free-photo/rolling-pin-eggs-flour_144627-8691.jpg?w=1060&t=st=1664200115~exp=1664200715~hmac=9d6cff08e7a978eef712788804aa432b42a10f13314cf28dc6dbc3daaa3514a2")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
+      <div style={{height: '100vh',backgroundImage: 'url("https://img.freepik.com/free-photo/rolling-pin-eggs-flour_144627-8691.jpg?w=1060&t=st=1664200115~exp=1664200715~hmac=9d6cff08e7a978eef712788804aa432b42a10f13314cf28dc6dbc3daaa3514a2")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
       {loading ? <div><Loader/></div> : <div> <ItemList listProducts={listProducts} /></div>}
       </div>
       

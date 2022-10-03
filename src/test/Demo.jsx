@@ -31,9 +31,11 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
+import Container from "@mui/material/Container";
 
 export default function TitlebarImageList() {
   return (
+    <Container style={{display: 'flex', justifyContent: 'center'}} >
     <ImageList sx={{ width: 850, height: 600}} key="Subheader" cols={3} >
       {itemData.map((item) => (
         <ImageListItem key={item.img}  style={{margin: '1.5px'}}  >
@@ -63,6 +65,7 @@ export default function TitlebarImageList() {
       ))}
 
     </ImageList>
+    </Container>
   );
 }
 
