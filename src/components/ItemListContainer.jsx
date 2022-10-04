@@ -51,8 +51,8 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div style={{height: '105vh',backgroundImage: 'url("https://img.freepik.com/free-photo/mid-section-male-baker-holding-paper-bag-with-breads_23-2147883355.jpg?w=1060&t=st=1664820586~exp=1664821186~hmac=bc7e01466de035a41e62e1647d9e841453bc368bcf0d642f2d4e5e2a3c065cea")', backgroundRepeat: 'repeat-x', backgroundSize: 'cover'}}>
-      {loading ? <div><Loader/></div> : <div> <ItemList listProducts={listProducts} /></div>}
+      <div className="containerItemList">
+      {loading ? <div><Loader/></div> : <div> <ItemList categoryId={categoryId} listProducts={listProducts} /></div>}
       </div>
       
     </>

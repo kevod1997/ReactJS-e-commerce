@@ -39,7 +39,7 @@ const ItemDetailContainer = () => {
   return (
     <div style={{backgroundImage: 'url("https://img.freepik.com/free-photo/agriculture-industry-bakery-organic-food-healthy-eating-concept-different-tasty-breads-made-organic-flour-sourdough-main-product-daily-nutrition-rich-nutrients-minerals_273609-38098.jpg?w=1060&t=st=1664763702~exp=1664764302~hmac=8710d9b6e72d5a7635555bceeaa615314b97709450de1503509c69e760833d60")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       {loading ? (
-        <div><Loader/></div>
+        <div style={{height: '80vh'}}><Loader/></div>
       ) : (
         <ItemDetail productDetail={productDetail} />
       )}

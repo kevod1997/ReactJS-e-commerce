@@ -7,7 +7,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 
-const Item = ({ product }) => {
+const Item = ({ product, categoryId }) => {
   const { id, img, name, price, stock } = product;
   const navigate = useNavigate();
   const { addItem } = useCart();
@@ -24,23 +24,24 @@ const Item = ({ product }) => {
     addItem(purchase);
     alert("Agregaste el producto al carrito");
   };
+  const styleCard = ()=>  categoryId ? {height: '50%', marginTop: '50px'} : null
 
   return (
     <>
-      <ImageListItem className="cardsHome" key={product.img} style={{ margin: "3px" }}>
+      <ImageListItem className="cardsHome" key={product.img}  style={styleCard()}  >
         <img
           className="imgCard"
           src={`${product.img}?w=248&fit=crop&auto=format`}
           srcSet={`${product.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
           alt={product.name}
           loading="lazy"
-          style={{ objectFit: "fill", cursor: "pointer" }}
+          style={{ objectFit: "fill", cursor: "pointer", marginBottom: '0px' }}
           onClick={() => navigate(`/detail/${id}`)}
         />
         <ImageListItemBar
           title={product.name}
           subtitle={`$ ${product.price}`}
-          sx={{borderEndStartRadius: '15px', borderEndEndRadius:'15px'}}
+          sx={{borderEndStartRadius: '15px', borderEndEndRadius:'15px', marginBottom: '0px' }}
           actionIcon={
             <IconButton
               sx={{ color: "rgba(255, 255, 255, 0.54)" }}

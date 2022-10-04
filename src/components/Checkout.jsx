@@ -81,7 +81,7 @@ export default function Checkout() {
           style={{
             margin: "150px 300px",
             paddingTop: "20px",
-            backgroundColor:
+            background:
               "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
           }}
         >
@@ -148,7 +148,7 @@ export default function Checkout() {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            backgroundColor: "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
+            background: "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
             margin: "250px 400px",
             borderRadius: "10px",
           }}

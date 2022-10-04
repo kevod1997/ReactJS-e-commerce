@@ -99,7 +99,35 @@ code {
     height: auto;
   }
   }
-  
+
+  .cardsHome{
+    height: 50%;
+    margin: 3px;
+  }
+
+.containerItemList{
+  height: 80vh;
+  background-image: url(https://img.freepik.com/free-photo/mid-section-male-baker-holding-paper-bag-with-breads_23-2147883355.jpg?w=1060&t=st=1664820586~exp=1664821186~hmac=bc7e01466de035a41e62e1647d9e841453bc368bcf0d642f2d4e5e2a3c065cea);
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.containerItemList2{
+  height: 60vh;
+}
+
+@media (min-width:900px){
+  .containerItemList{
+    height: 102vh;
+  }
+}
+@media (max-width:700px){
+  .containerItemList{
+    height: 70vh;
+  }
+}
+
+
 
 
 
