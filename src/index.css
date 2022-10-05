@@ -112,15 +112,13 @@ code {
   background-size: cover;
 }
 
-.containerItemList2{
-  height: 60vh;
-}
 
 @media (min-width:900px){
   .containerItemList{
     height: 102vh;
   }
 }
+
 @media (max-width:700px){
   .containerItemList{
     height: 70vh;

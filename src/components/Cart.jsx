@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, {  } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import CartItem from "./CartItem";
 import { Container } from "@mui/material";
 import { FaArrowLeft, FaRegTrashAlt } from "react-icons/fa";
 
+
 const Cart = () => {
   //forma larga de llamar context
   //  const{cart} = useContext(CartContext)
+  // const [boton, setBoton] = useState(false)
 
   const { cart, cartTotal, clear } = useCart();
   const navegate = useNavigate();
@@ -31,24 +33,23 @@ const Cart = () => {
             }}
           >
             <div className="d-grid gap-2 col-6 mx-auto">
-            <h4
-              className="alert alert-dark d-flex justify-content-center"
-              role="alert"
-              style={{
-                fontWeight:'lighter'
-              }}
-            >
-              Tu carrito está vacío
-            </h4>
-            <a
-              className="btn btn-secondary btn-lg d-flex justify-content-center"
-              onClick={() => navegate("/products")}
-              style={{
-
-              }}
-            >
-              Ir a Comprar
-            </a>
+              <h4
+                className="alert alert-dark d-flex justify-content-center"
+                role="alert"
+                style={{
+                  fontWeight: "lighter",
+                }}
+              >
+                Tu carrito está vacío
+              </h4>
+              <a
+                className="btn btn-secondary btn-lg d-flex justify-content-center"
+                onClick={() => navegate("/products")}
+                style={{}}
+              >
+                Ir a Comprar
+              </a>
+              {/* <button onClick={} >Mostra alerta</button> */}
             </div>
           </div>
         ) : (
@@ -82,8 +83,8 @@ const Cart = () => {
                     borderBottom: "1px solid #c9c9c9",
                     fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
                     fontWeight: "lighter",
-                    borderTopLeftRadius: '10px',
-                    borderTopRightRadius: '10px'
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
                   }}
                 >
                   Carrito ({cart.length}){" "}
@@ -112,19 +113,32 @@ const Cart = () => {
                     background:
                       "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
                     paddingTop: "40px",
-                    borderBottomLeftRadius: '10px',
-                      borderBottomRightRadius: '10px'
+                    borderBottomLeftRadius: "10px",
+                    borderBottomRightRadius: "10px",
                   }}
                 >
-                  <div className="d-flex justify-content-center" style={{paddingBottom:'25px',borderBottom: "1px solid #c9c9c9" }}>
+                  <div
+                    className="d-flex justify-content-center"
+                    style={{
+                      paddingBottom: "25px",
+                      borderBottom: "1px solid #c9c9c9",
+                    }}
+                  >
                     <button
                       className="btn btn-outline-dark"
-                      style={{ cursor: "pointer", marginRight: "50px"}}
+                      style={{ cursor: "pointer", marginRight: "50px" }}
                       onClick={() => navegate("/checkout")}
                     >
                       Finalizar Compra
                     </button>
-                    <p style={{ marginBottom: "0px", marginLeft: "50px", paddingTop:'7px', fontWeight:'bold' }}>
+                    <p
+                      style={{
+                        marginBottom: "0px",
+                        marginLeft: "50px",
+                        paddingTop: "7px",
+                        fontWeight: "bold",
+                      }}
+                    >
                       Total: ${cartTotal()}
                     </p>
                   </div>

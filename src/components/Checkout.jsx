@@ -5,6 +5,8 @@ import { database } from "../firebase/firebase";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Checkout() {
   const [comprador, setComprador] = useState({});
@@ -23,7 +25,15 @@ export default function Checkout() {
   const finalizarCompra = (e) => {
     if (Object.values(comprador).length !== 3) {
       e.preventDefault();
-      alert("Tenes que completar todos los campos");
+      toast.error("Tenes que completar todos los campos", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     } else {
       e.preventDefault();
       setLoader(true);
@@ -98,14 +108,17 @@ export default function Checkout() {
             </span>
           </div>
           <div className="containter">
-            
-              <form
-                className="d-flex justify-content-center"
-                onSubmit={finalizarCompra}
-                style={{ marginBottom: "25px", marginTop: "30px" }}
-              >
-                <div className="row">
-                <div className="col-12 d-flex justify-content-center" style={{marginBottom: '20px'}}>
+            <form
+              className="d-flex justify-content-center"
+              onSubmit={finalizarCompra}
+              style={{ marginBottom: "25px", marginTop: "30px" }}
+            >
+              <ToastContainer />
+              <div className="row">
+                <div
+                  className="col-12 d-flex justify-content-center"
+                  style={{ marginBottom: "20px" }}
+                >
                   <input
                     style={{ margin: "5px" }}
                     type="text"
@@ -137,8 +150,8 @@ export default function Checkout() {
                     Finalizar Compra
                   </button>
                 </div>
-                </div>
-              </form>
+              </div>
+            </form>
           </div>
         </div>
       ) : (
@@ -148,12 +161,13 @@ export default function Checkout() {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            background: "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
+            background:
+              "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
             margin: "250px 400px",
             borderRadius: "10px",
           }}
         >
-          <h4 style={{paddingTop:'10px'}} >Gracias por tu compra! </h4>
+          <h4 style={{ paddingTop: "10px" }}>Gracias por tu compra! </h4>
           <button
             className="btn btn-dark"
             onClick={() => navigate("/")}

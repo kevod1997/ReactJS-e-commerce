@@ -6,6 +6,8 @@ import { useCart } from "../context/CartContext";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Item = ({ product, categoryId }) => {
   const { id, img, name, price, stock } = product;
@@ -22,36 +24,54 @@ const Item = ({ product, categoryId }) => {
       quantity: compra,
     };
     addItem(purchase);
-    alert("Agregaste el producto al carrito");
+    toast.success("Agregaste un producto al carrito!", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
   };
-  const styleCard = ()=>  categoryId ? {height: '50%', marginTop: '50px'} : null
+  const styleCard = () =>
+    categoryId ? { height: "50%", marginTop: "50px" } : null;
 
   return (
     <>
-      <ImageListItem className="cardsHome" key={product.img}  style={styleCard()}  >
+      <ImageListItem
+        className="cardsHome"
+        key={product.img}
+        style={styleCard()}
+      >
         <img
           className="imgCard"
           src={`${product.img}?w=248&fit=crop&auto=format`}
           srcSet={`${product.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
           alt={product.name}
           loading="lazy"
-          style={{ objectFit: "fill", cursor: "pointer", marginBottom: '0px' }}
+          style={{ objectFit: "fill", cursor: "pointer", marginBottom: "0px" }}
           onClick={() => navigate(`/detail/${id}`)}
         />
         <ImageListItemBar
           title={product.name}
           subtitle={`$ ${product.price}`}
-          sx={{borderEndStartRadius: '15px', borderEndEndRadius:'15px', marginBottom: '0px' }}
+          sx={{
+            borderEndStartRadius: "15px",
+            borderEndEndRadius: "15px",
+            marginBottom: "0px",
+          }}
           actionIcon={
             <IconButton
               sx={{ color: "rgba(255, 255, 255, 0.54)" }}
               aria-label={`info about ${product.price}`}
-              onClick={()=> onAdd(setCompra +1)}
+              onClick={() => onAdd(setCompra + 1)}
             >
               <BsFillBagPlusFill />
             </IconButton>
           }
         />
+        <ToastContainer />
       </ImageListItem>
       {/* <div
         className="card text-center bg-dark animate__animated animate__fadeInUp"
