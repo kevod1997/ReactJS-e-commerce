@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Checkout() {
   const [comprador, setComprador] = useState({});
   const [orderId, setOrderId] = useState("");
-  const { cart, cartTotal, clear } = useCart();
+  const { cart, cartTotal, clearFinally } = useCart();
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ export default function Checkout() {
       })
         .then((res) => {
           setOrderId(res.id);
-          clear();
+          clearFinally();
         })
         .catch((error) => console.log(error))
         .finally(() => setLoader(false));

@@ -54,6 +54,7 @@ export const CartProvider = ({ children }) => {
 
   //Funcion que recibe item(recibe purchase)
 
+
   const addItem = (item) => {
     const existsInCart = cart.find((prod) => prod.id === item.id)
     if(existsInCart){
@@ -69,10 +70,36 @@ export const CartProvider = ({ children }) => {
         setCart([...cart, item])
     }
   }
+  const sumItem = (item) => {
+    const updateItem = cart.map((prod) => {
+        if (prod.id === item.id && prod.quantity < item.stock) {
+            return { ...prod, quantity: prod.quantity + 1 }
+        } else {
+            return prod
+        }
+    })
+    setCart(updateItem)
+}
+
+const reduceItem = (item) => {
+    const updateItem = cart.map((prod) => {
+        if (prod.id === item.id) {
+            return { ...prod, quantity: prod.quantity - 1 }
+        } else {
+            return prod
+        }
+
+    })
+    setCart(updateItem)
+}
 
   const clear = () => {
     deleteCartAlert();
   };
+  const clearFinally = () => {
+    setCart([])
+  };
+
 
   const removeItem = (id) => {
     setCart(cart.filter((prod) => prod.id !== id));
@@ -90,7 +117,8 @@ export const CartProvider = ({ children }) => {
   }
 
   return (
-    <CartContext.Provider value={{ cart, setCart, addItem, clear, removeItem, isInCart, cartQuantity, cartTotal }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ cart, setCart, addItem, clear, clearFinally, removeItem, isInCart, cartQuantity, cartTotal,sumItem,
+      reduceItem }}>{children}</CartContext.Provider>
   );
 };
 

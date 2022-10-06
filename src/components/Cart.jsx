@@ -15,6 +15,7 @@ const Cart = () => {
   const { cart, cartTotal, clear } = useCart();
   const navegate = useNavigate();
 
+
   return (
     <>
       <div>
