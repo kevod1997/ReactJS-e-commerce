@@ -11,6 +11,15 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     deleteCartAlert
   }, [])
+  
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("cart"));
+    localData && setCart(localData);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
  
  const MySwal = withReactContent(Swal)
  const deleteCartAlert=()=>{
