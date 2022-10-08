@@ -9,7 +9,7 @@ import { useCart } from "../context/CartContext";
 // import { useState } from "react";
 
 export default function CartItem({ purchase }) {
-  const { removeItem, sumItem, reduceItem } = useCart();
+  const { removeItem, sumItem } = useCart();
   // const itemsInCart = {...purchase.quantity, addButton}
   const Img = styled("img")({
     margin: "auto",

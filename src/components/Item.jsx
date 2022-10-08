@@ -6,13 +6,14 @@ import { useCart } from "../context/CartContext";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Item = ({ product, categoryId }) => {
   const { id, img, name, price, stock } = product;
+
   const navigate = useNavigate();
-  const { addItem } = useCart();
+  const { addItem,disable } = useCart();
   const [compra, setCompra] = useState(1);
   const onAdd = () => {
     let purchase = {
@@ -23,17 +24,11 @@ const Item = ({ product, categoryId }) => {
       img,
       quantity: compra,
     };
-    addItem(purchase);
-    toast.success("Agregaste un producto al carrito!", {
-      position: "bottom-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-    });
+      setCompra+1,
+      addItem(purchase);
   };
+
+
   const styleCard = () =>
     categoryId ? { height: "50%", marginTop: "50px" } : null;
 
@@ -65,13 +60,14 @@ const Item = ({ product, categoryId }) => {
             <IconButton
               sx={{ color: "rgba(255, 255, 255, 0.54)" }}
               aria-label={`info about ${product.price}`}
-              onClick={() => onAdd(setCompra + 1)}
+              onClick={() => onAdd()}
+              disabled={disable}
             >
               <BsFillBagPlusFill />
             </IconButton>
           }
         />
-        <ToastContainer />
+        <ToastContainer  />
       </ImageListItem>
       {/* <div
         className="card text-center bg-dark animate__animated animate__fadeInUp"

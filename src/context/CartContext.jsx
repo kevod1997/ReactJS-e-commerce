@@ -3,6 +3,8 @@ import React, { createContext, useContext } from "react";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+ import {  toast } from "react-toastify";
+ import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext();
 
@@ -63,13 +65,36 @@ export const CartProvider = ({ children }) => {
 
   //Funcion que recibe item(recibe purchase)
 
-
   const addItem = (item) => {
     const existsInCart = cart.find((prod) => prod.id === item.id)
     if(existsInCart){
         const updatedCart = cart.map((prod)=> {
             if(prod.id === item.id){
-                return {...prod, quantity:prod.quantity + item.quantity}
+                if(prod.quantity + item.quantity <= prod.stock){
+                  
+                  toast.success("Agregaste un producto al carrito!", {
+                    position: "bottom-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                  });
+                  return {...prod, quantity:prod.quantity + item.quantity}
+                }else{
+                  toast.error("No hay mas stock", {
+                    position: "top-center",
+                    autoClose: 750,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                  }
+                  );
+                  return{...prod, quantity:prod.quantity}
+                }
             }else{
                 return prod
             }
@@ -90,17 +115,17 @@ export const CartProvider = ({ children }) => {
     setCart(updateItem)
 }
 
-const reduceItem = (item) => {
-    const updateItem = cart.map((prod) => {
-        if (prod.id === item.id) {
-            return { ...prod, quantity: prod.quantity - 1 }
-        } else {
-            return prod
-        }
+// const reduceItem = (item) => {
+//     const updateItem = cart.map((prod) => {
+//         if (prod.id === item.id) {
+//             return { ...prod, quantity: prod.quantity - 1 }
+//         } else {
+//             return prod
+//         }
 
-    })
-    setCart(updateItem)
-}
+//     })
+//     setCart(updateItem)
+// }
 
   const clear = () => {
     deleteCartAlert();
@@ -126,8 +151,8 @@ const reduceItem = (item) => {
   }
 
   return (
-    <CartContext.Provider value={{ cart, setCart, addItem, clear, clearFinally, removeItem, isInCart, cartQuantity, cartTotal,sumItem,
-      reduceItem }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ cart, setCart, addItem, clear, clearFinally, removeItem, isInCart, cartQuantity, cartTotal,sumItem
+       }}>{children}</CartContext.Provider>
   );
 };
 

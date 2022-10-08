@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import ItemCount from './ItemCount'
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from "react-toastify"
+
 
 const ItemDetail = ({ productDetail }) => {
 
@@ -12,7 +12,7 @@ const ItemDetail = ({ productDetail }) => {
   const [compra, setCompra]= useState(false)
   const { name, description, price, stock, img, id } = productDetail;
   const navigate = useNavigate()
-  const {addItem}= useCart()
+  const {addItem,cart}= useCart()
   const onAdd = () => {
     let purchase = {
       id,
@@ -28,16 +28,18 @@ const ItemDetail = ({ productDetail }) => {
      //funcion que recibe los 2 parametos, item y cantidad
 
     // addItem2(productDetail,count)
-    toast.success("Agregaste un producto al carrito!", {
-      position: "bottom-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-    });
 }
+const stockLimit = () => {
+
+  const found = cart.find((prod) => prod.id === id)
+  if (found){
+    return (found.stock - found.quantity)
+  }
+  else {
+    return stock
+  }
+}
+
 
   return (
     <div>
@@ -60,7 +62,7 @@ const ItemDetail = ({ productDetail }) => {
               </p>
               <ToastContainer/>
               {!compra
-               ? <ItemCount stock={stock} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} /> 
+               ? <ItemCount stock={stock} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} stockLimit={stockLimit()} /> 
                :
                <>
               <div className="card-text d-flex justify-content-center" style={{paddingBottom: '10px'}}>
