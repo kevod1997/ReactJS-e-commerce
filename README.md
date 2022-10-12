@@ -1,71 +1,92 @@
-# Getting Started with Create React App
+# E-commerce. Hecho por [Kevin Defalco](https://www.linkedin.com/in/kevindefalco/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://kevod1997.github.io/ProyectoCoderReact/)
 
-## Available Scripts
+# [PakisPan - Aplicacion desarrolada con React.js](https://kevod1997.github.io/ProyectoCoderReact/)
 
-In the project directory, you can run:
+## Comandos
 
-### `npm start`
+Create a new React app
+`npx create-react-app name`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Develop mode
+`npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React Router Dom
+`npm install react-router-dom`
 
-### `npm test`
+React Icons
+`npm install react-icons --save`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Firebase v 8.9.1
+`npm install firebase@9.10.0`
 
-### `npm run build`
+Deploy
+`npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+@emotion/react: ^11.10.0,
+@emotion/styled: ^11.10.0,
+@mui/icons-material: ^5.10.2,
+@mui/material: ^5.10.2,
+@testing-library/jest-dom: ^5.16.5,
+@testing-library/react: ^13.3.0,
+@testing-library/user-event: ^13.5.0,
+@bootstrap: ^5.2.0,
+@firebase: ^9.10.0,
+@prop-types: ^15.8.1,
+@react: ^18.2.0,
+@react-bootstrap: ^2.5.0,
+@react-dom: ^18.2.0,
+@react-icons: ^4.4.0,
+@react-material-ui-carousel: ^3.4.2,
+@react-mui-counter: ^1.0.9,
+@react-router-dom: ^6.3.0,
+@react-scripts: 5.0.1,
+@react-toastify: ^9.0.8,
+@sweetalert2: ^11.4.37,
+@web-vitals: ^2.1.4
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Descripción
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+PakisPan es una single-page application  basado en un emprendemiento de venta de panes artesanales. Los productos y la orden de compra con los pedidos se almacenan en firebase.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La pagina consiste en una pagina principal, donde una imagen principal explica brevemente en que consiste el negocio y como funciona su metodologia de trabajo. Debajo de la imagen, se muestran los productos que se ofrecen, se puede ver su nombre y su precio. Se puede agregar productos al carrito haciendo click en el bolso, el cual disparar 2 tipos de leyendas dependiendo de si haya o no stock del producto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Items
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Asimismo, si se hace click en la imagen del producto se llevara a la card del mismo, en donde se dara una descripcion del producto, la cantidad que hay disponible y una botonera para poder agregar productos al carrito. 
 
-## Learn More
+### Categorías
+ En la barra de navegación se puede elegir entre las tres categorías de productos para visualizar. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Carrito
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El carrito muestra la totalidad de los productos elegidos y dispone de un contador para agregar o quitar cantidades del producto. Tiene un máximo según stock del producto y cuando se disminuye a cero, el producto se elimina del carrito. Además tiene botones para borrar individualmente los productos y la totalidad.
+Finalmente consta de un boton para poder finalizar la compra, el cual te dirige hacia un formulario en el cual se debe introducir nombre, telefono y mail para poder generar una orden (la genera firebase una vez validado el formulario).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Librerías utilizadas
 
-### Analyzing the Bundle Size
+### Material UI v5
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Esta libreria fue utilizada debido a que nos otorga un abanico de posibilidades muy variado para  crear vistas dinámicas e interactivas de gran calidad, para que la experiencia de navegacion sea mas amena para el usuario.
 
-### Making a Progressive Web App
+### Bootstrap v5.2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Gran parte del proyecto fue realizado con este libreria debido a que es sencillo e intuitivo y se adapta a todo tipo de pantallas. Es extensible y cuenta con múltiples implementaciones externas.
 
-### Advanced Configuration
+### SweetAlert2 y Tostify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Estas librerias fueron utilizadas ya que son excelentes visual e interactivamente, y permiten que el usuario tenga una mejor experiencia al navegar en el sitio.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### TO-DO
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ProyectoCoderReact
+| Funcionalidades | descripción                                                                  |
+| --------------- | ---------------------------------------------------------------------------- |
+| Login           | Crear un login para verificar usuarios                                       |
+| Stock           | Reducir la cantidad de stock de la base de datos al concluir una compra      |
+| Favoritos       | Añadir una lista de favoritos generada por cada usuario. (Asociada al Login) |

@@ -155,24 +155,24 @@ export default function Checkout() {
       ) : (
         //MODIFICAR CON MEDIAQUERY PARA QUE QUEDE RESPONSIVE!!
         <div
-        className="d-flex flex-column justify-content-center"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
-            margin: "125px 150px",
-            borderRadius: "10px",
-          }}
+        className="finalMessageBox d-flex flex-column justify-content-center"
         >
-          <h4 style={{ paddingTop: "10px", textAlign:'center' }}>Gracias por tu compra! </h4>
-          <p style={{margin:'5px 25px', textAlign:'center'}}>En el plazo de 24hs nos vamos a comunicar para coordinar el retiro del producto</p>
+          <div className="finalMessage1 col-12 d-flex justify-content-center">
+          <h4 >Gracias por tu compra! </h4>
+          </div>
+          <div className="finalMessage2 col-12 d-flex justify-content-center">
+          <p className="message">En el plazo de 24hs nos vamos a comunicar para coordinar el retiro del producto. Ante cualquier inconveniente podes comunicarte con nosotros por nuestras redes</p>
+          </div>
+          <div className="col-12 d-flex justify-content-center">
           <button
             className="btn btn-dark"
             onClick={() => navigate("/")}
-            style={{ margin: "10px 300px",}}
+            style={{margin:'15px 0px'}}
           >
             {" "}
             Volver
           </button>
+          </div>
         </div>
       )}
     </div>
