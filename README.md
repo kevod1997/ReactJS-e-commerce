@@ -40,7 +40,6 @@ Deploy
     @react-bootstrap: ^2.5.0,
     @react-dom: ^18.2.0,
     @react-icons: ^4.4.0,
-    @react-material-ui-carousel: ^3.4.2,
     @react-mui-counter: ^1.0.9,
     @react-router-dom: ^6.3.0,
     @react-scripts: 5.0.1,
