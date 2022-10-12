@@ -153,6 +153,7 @@ export default function Checkout() {
           </div>
         </div>
       ) : (
+        //MODIFICAR CON MEDIAQUERY PARA QUE QUEDE RESPONSIVE!!
         <div
         className="d-flex flex-column justify-content-center"
           style={{
