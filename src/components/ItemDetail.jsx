@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify"
 
 const ItemDetail = ({ productDetail }) => {
 
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
   const [compra, setCompra]= useState(false)
   const { name, description, price, stock, img, id } = productDetail;
   const navigate = useNavigate()

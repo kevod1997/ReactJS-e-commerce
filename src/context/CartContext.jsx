@@ -10,6 +10,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [disable, setDisable] = useState(false)
   useEffect(() => {
     deleteCartAlert
   }, [])
@@ -115,17 +116,16 @@ export const CartProvider = ({ children }) => {
     setCart(updateItem)
 }
 
-// const reduceItem = (item) => {
-//     const updateItem = cart.map((prod) => {
-//         if (prod.id === item.id) {
-//             return { ...prod, quantity: prod.quantity - 1 }
-//         } else {
-//             return prod
-//         }
-
-//     })
-//     setCart(updateItem)
-// }
+const reduceItem = (item) => {
+    const updateItem = cart.map((prod) => {
+        if (prod.id === item.id && prod.quantity >= 1) {
+            return { ...prod, quantity: prod.quantity - 1 }
+        } else {
+            return prod
+        }
+    })
+    setCart(updateItem)
+}
 
   const clear = () => {
     deleteCartAlert();
@@ -151,7 +151,7 @@ export const CartProvider = ({ children }) => {
   }
 
   return (
-    <CartContext.Provider value={{ cart, setCart, addItem, clear, clearFinally, removeItem, isInCart, cartQuantity, cartTotal,sumItem
+    <CartContext.Provider value={{ cart, setCart, addItem, clear, clearFinally, removeItem, isInCart, cartQuantity, cartTotal,sumItem, disable,reduceItem, setDisable
        }}>{children}</CartContext.Provider>
   );
 };

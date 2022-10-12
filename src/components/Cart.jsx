@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, {  } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import CartItem from "./CartItem";
 import { Container } from "@mui/material";
 import { FaArrowLeft, FaRegTrashAlt } from "react-icons/fa";
-
 
 const Cart = () => {
   //forma larga de llamar context
@@ -14,7 +13,6 @@ const Cart = () => {
 
   const { cart, cartTotal, clear } = useCart();
   const navegate = useNavigate();
-
 
   return (
     <>
@@ -59,9 +57,7 @@ const Cart = () => {
               backgroundColor: "#D3D3D3",
               backgroundImage:
                 'url("https://img.freepik.com/free-psd/bread-bio-packaging-real-context-mockup_23-2149293557.jpg?w=1060&t=st=1664200032~exp=1664200632~hmac=8a78a4cbc54e7e9b1c9a8420d42567b8c57c25ef201f4f56cb8ee606f448319b")',
-              paddingLeft: "225px",
-              paddingRight: "225px",
-              padding: "100px",
+              padding: "50px",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }}
@@ -69,10 +65,9 @@ const Cart = () => {
             {/* TOTAL PURCHASE */}
 
             {/* <div className="card-header">Total en el Carrito</div> */}
-            <div className="container text-center" style={{}}>
+            <div className="container text-center">
               <div
-                className="row"
-                style={{ margin: "175px", marginTop: "0px" }}
+                className="row containerCart"
               >
                 <div
                   className="col-12"
@@ -91,7 +86,8 @@ const Cart = () => {
                   Carrito ({cart.length}){" "}
                   <FaRegTrashAlt
                     onClick={clear}
-                    style={{ marginLeft: "5px", cursor: "pointer" }}
+                    style={
+                      { marginLeft: "5px", cursor: "pointer" }}
                   />
                 </div>
                 <div

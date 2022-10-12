@@ -6,11 +6,9 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
 import { useCart } from "../context/CartContext";
-// import { useState } from "react";
 
 export default function CartItem({ purchase }) {
-  const { removeItem, sumItem } = useCart();
-  // const itemsInCart = {...purchase.quantity, addButton}
+  const { removeItem, sumItem,reduceItem } = useCart();
   const Img = styled("img")({
     margin: "auto",
     display: "block",
@@ -23,9 +21,9 @@ export default function CartItem({ purchase }) {
   return (
     <Paper
       sx={{
-        p: 2,
+        p: 1,
         margin: "auto",
-        maxWidth: 500,
+        maxWidth: 1000,
         flexGrow: 1,
         backgroundColor: (theme) =>
           theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -34,7 +32,8 @@ export default function CartItem({ purchase }) {
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src={purchase.img} />
+            <Img 
+            alt="complex" src={purchase.img} />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>
@@ -46,7 +45,9 @@ export default function CartItem({ purchase }) {
               <Typography variant="body2" gutterBottom>
                 Cantidad: {purchase.quantity}
               </Typography>
-              <button onClick={()=>{sumItem(purchase)}}>+</button>
+              {purchase.quantity === purchase.stock? <p className="d-flex justify-content-center" style={{fontWeight: 'lighter', border: '1px solid red',color:'red', borderRadius: '5px', margin:'10px 50px', fontSize:'13px'}}>No hay mas stock</p>: ''}
+              <button className="btn btn-dark" style={{margin: '3px'}}  onClick={()=>{purchase.quantity>=2? reduceItem(purchase): removeItem(purchase.id)}}>-</button>
+              <button className="btn btn-dark" style={purchase.quantity === purchase.stock?{margin: '3px', cursor:'inherit'}:{margin: '3px'}}  onClick={()=>{purchase.quantity === purchase.stock? null: sumItem(purchase)}}>+</button>
             </Grid>
             <Grid item>
               <Typography
@@ -68,62 +69,3 @@ export default function CartItem({ purchase }) {
     </Paper>
   );
 }
-
-//   return (
-// <div
-//   className="container d-flex justify-content-center"
-//   key={purchase.id}
-// >
-//   <div className="row">
-//     <div
-//       className="card col-3 d-flex justify-content-center "
-//       style={{
-//         width: "50rem",
-//         height: "150px",
-//         margin: "15px",
-//         padding: "100px",
-//       }}
-//     >
-//       <ul className="list-group list-group-flush">
-//         <li className="list-group-item  d-flex justify-content-center ">
-//           Producto: {purchase.name}
-//         </li>
-//         <li className="list-group-item  d-flex justify-content-center ">
-//           Cantidad: {purchase.quantity}
-//         </li>
-//         <li className="list-group-item  d-flex justify-content-center ">
-//           Precio: {purchase.quantity * purchase.price}
-//         </li>
-//         <div className="d-flex justify-content-center">
-//           <a
-//             onClick={() => navegate("/")}
-//             className="btn btn-outline-primary"
-//             style={{
-//               marginLeft: "50px",
-//               marginRight: "50px",
-//               borderRadius: "10px",
-//               marginTop: "10px",
-//               marginBottom: "10px",
-//             }}
-//           >
-//             Seguir comprando
-//           </a>
-//           <a
-//             className="btn btn-outline-danger"
-//             style={{
-//               marginLeft: "50px",
-//               marginRight: "50px",
-//               borderRadius: "10px",
-//               marginTop: "10px",
-//               marginBottom: "10px",
-//             }}
-//             onClick={()=>removeItem(purchase.id)}
-//           >
-//             Eliminar Producto
-//           </a>
-//         </div>
-//       </ul>
-//     </div>
-//   </div>
-// </div>
-//   )

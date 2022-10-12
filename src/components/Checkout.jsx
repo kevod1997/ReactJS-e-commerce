@@ -87,13 +87,7 @@ export default function Checkout() {
     >
       {!orderId ? (
         <div
-          className="card d-flex justify-content-center"
-          style={{
-            margin: "150px 300px",
-            paddingTop: "20px",
-            background:
-              "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
-          }}
+          className="checkoutBox card d-flex justify-content-center"
         >
           <div>
             <span className="d-flex justify-content-center">
@@ -107,39 +101,43 @@ export default function Checkout() {
               </h5>
             </span>
           </div>
-          <div className="containter">
+          <div className="containter inputBox">
             <form
               className="d-flex justify-content-center"
               onSubmit={finalizarCompra}
-              style={{ marginBottom: "25px", marginTop: "30px" }}
             >
               <ToastContainer />
               <div className="row">
                 <div
-                  className="col-12 d-flex justify-content-center"
+                  className="col-12"
                   style={{ marginBottom: "20px" }}
-                >
+                  ><div className="itemCheckout d-flex justify-content-center">
                   <input
-                    style={{ margin: "5px" }}
+                    style={{ margin: "5px", width:'145%' }}
                     type="text"
-                    placeholder="Ingresa tu nombre y Apellido"
+                    placeholder="Ingresa tu nombre y apellido"
                     name="name"
                     onChange={datosComprador}
                   />
+                  </div>
+                <div className="itemCheckout d-flex justify-content-center">
                   <input
-                    style={{ margin: "5px" }}
+                    style={{ margin: "5px", width:'145%' }}
                     type="number"
                     placeholder="Ingresa tu telefono"
                     name="phone"
                     onChange={datosComprador}
                   />
+                </div>
+                <div className="itemCheckout d-flex justify-content-center">
                   <input
-                    style={{ margin: "5px" }}
+                    style={{ margin: "5px", width:'145%' }}
                     type="email"
                     placeholder="Ingresa tu correo"
                     name="email"
                     onChange={datosComprador}
                   />
+                </div>
                 </div>
                 <div className="col-12 d-flex justify-content-center">
                   <button
@@ -156,22 +154,20 @@ export default function Checkout() {
         </div>
       ) : (
         <div
+        className="d-flex flex-column justify-content-center"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
             background:
               "linear-gradient(90deg, rgba(201,201,201,1) 3%, rgba(237,236,236,1) 15%, rgba(237,236,236,1) 85%, rgba(201,201,201,1) 97%)",
-            margin: "250px 400px",
+            margin: "125px 150px",
             borderRadius: "10px",
           }}
         >
-          <h4 style={{ paddingTop: "10px" }}>Gracias por tu compra! </h4>
+          <h4 style={{ paddingTop: "10px", textAlign:'center' }}>Gracias por tu compra! </h4>
+          <p style={{margin:'5px 25px', textAlign:'center'}}>En el plazo de 24hs nos vamos a comunicar para coordinar el retiro del producto</p>
           <button
             className="btn btn-dark"
             onClick={() => navigate("/")}
-            style={{ margin: "10px" }}
+            style={{ margin: "10px 300px",}}
           >
             {" "}
             Volver
