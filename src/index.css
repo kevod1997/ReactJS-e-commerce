@@ -113,15 +113,17 @@ code {
 
 @media (min-width: 900px) {
   .containerItemList {
-    height: 102vh;
+    height: 115vh;
   }
 }
 
 @media (max-width: 700px) {
   .containerItemList {
-    height: 70vh;
+    height: 85vh;
+    padding-top: 5px;
   }
 }
+
 
 .containerCart{
   margin: 175px; 
