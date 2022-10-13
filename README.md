@@ -6,20 +6,11 @@
 
 ## Comandos
 
-Create a new React app
-`npx create-react-app name`
+Init Proyect
+`npm i`
 
 Develop mode
 `npm start`
-
-React Router Dom
-`npm install react-router-dom`
-
-React Icons
-`npm install react-icons --save`
-
-Firebase v 8.9.1
-`npm install firebase@9.10.0`
 
 Deploy
 `npm run build`
