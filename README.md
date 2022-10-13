@@ -52,7 +52,7 @@ Deploy
 
 PakisPan es una single-page application  basado en un emprendemiento de venta de panes artesanales. Los productos y la orden de compra con los pedidos se almacenan en firebase.
 
-La pagina consiste en una pagina principal, donde una imagen principal explica brevemente en que consiste el negocio y como funciona su metodologia de trabajo. Debajo de la imagen, se muestran los productos que se ofrecen, se puede ver su nombre y su precio. Se puede agregar productos al carrito haciendo click en el bolso, el cual disparar 2 tipos de leyendas dependiendo de si haya o no stock del producto.
+La pagina consiste en una pagina principal, donde una imagen explica brevemente en que consiste el negocio y como funciona su metodologia de trabajo. Debajo de la imagen, se muestran los productos que se ofrecen, se puede ver su nombre y su precio. Se puede agregar productos al carrito haciendo click en el bolso, el cual puede disparar dos tipos de leyendas dependiendo de si hay o no stock del producto.
 
 ### Items
 
@@ -63,7 +63,7 @@ Asimismo, si se hace click en la imagen del producto se llevara a la card del mi
 
 ### Carrito
 
-El carrito muestra la totalidad de los productos elegidos y dispone de un contador para agregar o quitar cantidades del producto. Tiene un máximo según stock del producto y cuando se disminuye a cero, el producto se elimina del carrito. Además tiene botones para borrar individualmente los productos y la totalidad.
+El carrito muestra la totalidad de los productos elegidos y dispone de un contador para agregar o quitar unidades del producto. Estas Tienen un máximo según el stock del producto y cuando se disminuyen a cero, el producto se elimina del carrito. Además tiene botones para borrar individualmente los productos y la totalidad del carrito.
 Finalmente consta de un boton para poder finalizar la compra, el cual te dirige hacia un formulario en el cual se debe introducir nombre, telefono y mail para poder generar una orden (la genera firebase una vez validado el formulario).
 
 
