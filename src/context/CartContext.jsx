@@ -72,16 +72,6 @@ export const CartProvider = ({ children }) => {
         const updatedCart = cart.map((prod)=> {
             if(prod.id === item.id){
                 if(prod.quantity + item.quantity <= prod.stock){
-                  
-                  toast.success("Agregaste un producto al carrito!", {
-                    position: "bottom-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: false,
-                    draggable: false,
-                    progress: undefined,
-                  });
                   return {...prod, quantity:prod.quantity + item.quantity}
                 }else{
                   toast.error("No hay mas stock", {

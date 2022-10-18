@@ -23,8 +23,12 @@ export default function Checkout() {
   };
 
   const finalizarCompra = (e) => {
+    e.preventDefault();
+    // const email = e.target.email.value;
+    // const regexEmail =
+    // /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
     if (Object.values(comprador).length !== 3) {
-      e.preventDefault();
       toast.error("Tenes que completar todos los campos", {
         position: "bottom-center",
         autoClose: 3000,
@@ -34,8 +38,21 @@ export default function Checkout() {
         draggable: false,
         progress: undefined,
       });
-    } else {
-      e.preventDefault();
+      return;
+    } 
+  //    if(email !== '' || regexEmail.test(email)){
+  //     toast.error("Email Invalido", {
+  //       position: "bottom-center",
+  //       autoClose: 3000,
+  //       hideProgressBar: false,
+  //       closeOnClick: false,
+  //       pauseOnHover: false,
+  //       draggable: false,
+  //       progress: undefined,
+  //     });
+  //     return;
+  // }
+    else {
       setLoader(true);
       const ventas = collection(database, "orders");
       addDoc(ventas, {

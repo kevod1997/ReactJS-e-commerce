@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Item = ({ product, categoryId }) => {
@@ -25,7 +25,17 @@ const Item = ({ product, categoryId }) => {
       quantity: compra,
     };
       setCompra+1,
+      toast.success("Agregaste un producto al carrito!", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      })
       addItem(purchase);
+     
   };
 
 
