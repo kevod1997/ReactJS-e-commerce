@@ -1,6 +1,6 @@
 # E-commerce. Hecho por [Kevin Defalco](https://www.linkedin.com/in/kevindefalco/)
 
-# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://kevod1997.github.io/ProyectoCoderReact/)
+# [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://kevod1997.github.io/ReactJS-e-commerce/)
 
 # [PakisPan - Aplicacion desarrolada con React.js](https://kevod1997.github.io/ReactJS-e-commerce/)
 
