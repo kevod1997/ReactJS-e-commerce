@@ -2,7 +2,7 @@
 
 # [![CSS](https://img.shields.io/badge/Link%20al%20sitio-blueviolet)](https://kevod1997.github.io/ProyectoCoderReact/)
 
-# [PakisPan - Aplicacion desarrolada con React.js](https://kevod1997.github.io/ProyectoCoderReact/)
+# [PakisPan - Aplicacion desarrolada con React.js](https://kevod1997.github.io/ReactJS-e-commerce/)
 
 ## Comandos
 
