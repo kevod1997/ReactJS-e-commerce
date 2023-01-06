@@ -29,7 +29,7 @@ function App() {
   <NavBar/>
   <Routes>
     {/* <Route path="/test" element={<TestLecturaDeProductos />} />  */}
-    <Route path="/ProyectoCoderReact" element={<Home/>} />
+    <Route path="/ReactJS-e-commerce" element={<Home/>} />
     <Route path="/" element={<Home/>} />
     <Route path="/products" element={<ItemListContainer/>} />
     <Route path="/category/:categoryId" element={<ItemListContainer/>} />
